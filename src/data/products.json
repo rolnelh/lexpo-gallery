@@ -1,0 +1,268 @@
+[
+  {
+    "id": "1",
+    "slug": "robe-lin-naturel-brodee-main",
+    "title": "Robe en lin naturel — Broderie artisanale",
+    "category": "Mode & Lin",
+    "price": 45000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 5.0,
+    "reviews": 18,
+    "location": "Cotonou, Bénin",
+    "author": {
+      "name": "Mariam K.",
+      "initials": "MK",
+      "country": "BJ"
+    },
+    "payments": [
+      "MTN",
+      "Moov",
+      "Espèces"
+    ],
+    "description": "Robe légère 100% lin. Broderies florales réalisées à la main au col et aux manches. Teinture végétale respectueuse de l'environnement.",
+    "tags": [
+      "lin",
+      "mode éthique",
+      "fait main"
+    ],
+    "color": "#E1F5EE",
+    "image": "https://images.unsplash.com/photo-1594913785162-e6785b493bd2?w=500"
+  },
+  {
+    "id": "2",
+    "slug": "tableau-metal-recycle-abstrait",
+    "title": "Tableau mural — Métal recyclé et bois",
+    "category": "Art & Déco",
+    "price": 85000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 4.9,
+    "reviews": 7,
+    "location": "Porto-Novo, Bénin",
+    "author": {
+      "name": "Issa D.",
+      "initials": "ID",
+      "country": "BJ"
+    },
+    "payments": [
+      "MTN",
+      "Espèces"
+    ],
+    "description": "Œuvre abstraite réalisée à partir de pièces mécaniques recyclées sur un support en bois de récupération vernis. Pièce unique signée.",
+    "tags": [
+      "recyclage",
+      "art mural",
+      "industriel"
+    ],
+    "color": "#EEEDFE",
+    "image": "https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?w=500"
+  },
+  {
+    "id": "3",
+    "slug": "bracelet-perles-traditionnel-lome",
+    "title": "Bracelet en perles de verre et argent",
+    "category": "Bijoux",
+    "price": 7500,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 4.8,
+    "reviews": 25,
+    "location": "Lomé, Togo",
+    "author": {
+      "name": "Elom G.",
+      "initials": "EG",
+      "country": "TG"
+    },
+    "payments": [
+      "T-Money",
+      "Moov"
+    ],
+    "description": "Bracelet ajustable fabriqué avec des perles de verre artisanales et des finitions en argent. Inspiré des motifs traditionnels.",
+    "tags": [
+      "bijoux",
+      "perles",
+      "accessoire"
+    ],
+    "color": "#FAEEDA",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSTCxg7xlx4SdKBBhM3ML3Ve_nS582cxyyPw&s"
+  },
+  {
+    "id": "4",
+    "slug": "chemise-lin-homme-bleu-indigo",
+    "title": "Chemise en lin — Teinture Indigo",
+    "category": "Mode & Lin",
+    "price": 25000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 4.7,
+    "reviews": 12,
+    "location": "Cocody, Abidjan",
+    "author": {
+      "name": "Ama K.",
+      "initials": "AK",
+      "country": "CI"
+    },
+    "payments": [
+      "Orange",
+      "Wave"
+    ],
+    "description": "Coupe cintrée, tissu respirant idéal pour les climats chauds. Teinture indigo naturelle qui se patine avec le temps.",
+    "tags": [
+      "lin",
+      "homme",
+      "naturel"
+    ],
+    "color": "#E6F1FB",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7AyKc616yPSPAEch5wXjHDXAUEkZP-_sQbg&s"
+  },
+  {
+    "id": "5",
+    "slug": "statue-bois-ebene-sculptee",
+    "title": "Statue 'Maternité' — Ebène massif",
+    "category": "Art & Déco",
+    "price": 120000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 5.0,
+    "reviews": 4,
+    "location": "Bamako, Mali",
+    "author": {
+      "name": "Aïcha T.",
+      "initials": "AT",
+      "country": "ML"
+    },
+    "payments": [
+      "Orange",
+      "Moov"
+    ],
+    "description": "Sculpture traditionnelle en bois d'ébène noir. Un travail de précision représentant la transmission familiale.",
+    "tags": [
+      "sculpture",
+      "ébène",
+      "art africain"
+    ],
+    "color": "#FAECE7",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL58xcnzryNM_OZK0oZ3Kp-5f6c--QJ4wYPg&s"
+  },
+  {
+    "id": "6",
+    "slug": "Sac en corde macramé “Cacahouète” - Africouleur",
+    "title": "Sac en corde macramé “Cacahouète” - Africouleur",
+    "category": "Recyclage",
+    "price": 15000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 4.6,
+    "reviews": 9,
+    "location": "Cotonou, Bénin",
+    "author": {
+      "name": "Tossa Honorine.",
+      "initials": "FD",
+      "country": "BJ"
+    },
+    "payments": [
+      "Wave",
+      "Espèces"
+    ],
+    "description": "Sac en corde macramé “Cacahouète” Fabriqué à la main avec du raphia naturel et parfait pour les courses ou la plage.",
+    "tags": [
+      "sac",
+      "éco-responsable",
+      "tissage"
+    ],
+    "color": "#EAF3DE",
+    "image": "https://www.africouleur.com/wp-content/uploads/2022/12/IMG_20221215_153440-scaled.jpg"
+  },
+
+
+
+  {
+    "id": "7",
+    "slug": "Sac artisanal pour Dames",
+    "title": "Sac artisanal pour Dames",
+    "category": "Mode & Lin",
+    "price": 45000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 5.0,
+    "reviews": 18,
+    "location": "Cotonou, Bénin",
+    "author": {
+      "name": "Fathnelle D.",
+      "initials": "MK",
+      "country": "BJ"
+    },
+    "payments": [
+      "MTN",
+      "Moov",
+      "Espèces"
+    ],
+    "description": "Fabriqué à la main, ce sac soutient **l’artisanat local** et promeut une **mode durable**. Aucun produit chimique, aucun plastique inutile — seulement du **tissu naturel**, du **coton recyclé** et de l’**amour dans chaque point de couture",
+    "tags": [
+      "lin",
+      "mode éthique",
+      "fait main"
+    ],
+    "color": "#E1F5EE",
+    "image": "https://africaplace.net/storage/uploads/all/lO6hujJIgyrQCTWZM2u8MaCQXdkLyokH7uNyaCWi.jpg"
+  },
+  {
+    "id": "8",
+    "slug": "tableau-metal-recycle-abstrait",
+    "title": "Tableau mural — Métal recyclé et bois",
+    "category": "Art & Déco",
+    "price": 85000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 4.9,
+    "reviews": 7,
+    "location": "Porto-Novo, Bénin",
+    "author": {
+      "name": "Issa D.",
+      "initials": "ID",
+      "country": "BJ"
+    },
+    "payments": [
+      "MTN",
+      "Espèces"
+    ],
+    "description": "Œuvre abstraite réalisée à partir de pièces mécaniques recyclées sur un support en bois de récupération vernis. Pièce unique signée.",
+    "tags": [
+      "recyclage",
+      "art mural",
+      "industriel"
+    ],
+    "color": "#EEEDFE",
+    "image": "https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?w=500"
+  },
+  {
+    "id": "9",
+    "slug": "bracelet-perles-traditionnel-lome",
+    "title": "Bracelet en perles de verre et argent",
+    "category": "Bijoux",
+    "price": 7500,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 4.8,
+    "reviews": 25,
+    "location": "Lomé, Togo",
+    "author": {
+      "name": "Elom G.",
+      "initials": "EG",
+      "country": "TG"
+    },
+    "payments": [
+      "T-Money",
+      "Moov"
+    ],
+    "description": "Bracelet ajustable fabriqué avec des perles de verre artisanales et des finitions en argent. Inspiré des motifs traditionnels.",
+    "tags": [
+      "bijoux",
+      "perles",
+      "accessoire"
+    ],
+    "color": "#FAEEDA",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSTCxg7xlx4SdKBBhM3ML3Ve_nS582cxyyPw&s"
+  }
+]

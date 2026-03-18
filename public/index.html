@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#EF9F27" />
+  <meta property="og:title" content="L'Expo — La Scène des Créateurs" />
+  <meta property="og:image" content="/images/votre-plus-belle-affiche.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            expo: '#EF9F27',
+            dark: '#111111',
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            sans: ['DM Sans', 'sans-serif'],
+          },
+          borderRadius: {
+            '4xl': '2rem',
+            '5xl': '3rem',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- <title>L'EXPO | Artisanat du Bénin</title> -->
+</head>
+
+<body class="bg-white">
+  <div id="root"></div>
+</body>
+
+</html>
