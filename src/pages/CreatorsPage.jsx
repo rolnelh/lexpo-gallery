@@ -364,7 +364,7 @@ const CreatorsPage = () => {
           </div>
         </section>
 
-        <section className="bg-stone-950 rounded-[40px] p-8 md:p-16 text-center space-y-8 overflow-hidden relative group">
+        <section className="bg-stone-950 rounded-[40px] p-8 md:p-16 text-center space-y-8 overflow-hidden relative group mx-auto">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[#EF9F27] opacity-[0.05] blur-[120px] rounded-full"></div>
 
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
