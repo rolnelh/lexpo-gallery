@@ -1,4 +1,4 @@
-# Chariow Marketplace — Prototype
+# lexpo — Prototype
 
 Prototype fonctionnel de la marketplace publique `/explorer` pour Chariow.
 
@@ -47,6 +47,5 @@ Le fichier `vercel.json` gère déjà les redirections SPA.
 - Barre de recherche avec tags populaires
 - Balises meta SEO dynamiques par page produit (`react-helmet-async`)
 - JSON-LD structured data (Schema.org Product) pour Google
-- Paiements Mobile Money affichés (Orange, MTN, Wave, Moov)
 - Design calqué sur l'identité Chariow (jaune #EF9F27)
 - Routing SPA avec URLs propres (`/produit/slug`)
