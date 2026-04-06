@@ -25,7 +25,7 @@ export default function Header() {
           </span>
         </div>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8 tracking-tight">
           <NavLink to="/explorer">Découvrir les créations</NavLink>
           <NavLink to="/artisans">Nos Artisans</NavLink>
           <NavLink to="/sur-mesure">Demande sur mesure</NavLink>
@@ -35,7 +35,7 @@ export default function Header() {
         <div className="flex items-center gap-3 md:gap-6">
           <button
             onClick={() => navigate("/login")}
-            className="hidden sm:flex items-center gap-2 text-[13px] font-normal tracking-widest text-black hover:text-stone-950 transition-colors"
+            className="hidden sm:flex items-center gap-2 text-[13px] font-normal tracking-tight text-black hover:text-stone-950 transition-colors"
           >
             <User size={16} />
             <span>Se connecter</span>
@@ -43,7 +43,7 @@ export default function Header() {
 
           <button
             onClick={() => navigate("/publier")}
-            className="group flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-all"
+            className="group flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2.5 text-[11px] font-bold uppercase text-white transition-all"
           >
             <span className="hidden xs:inline">Exposer mon travail</span>
             <span className="xs:hidden">Exposer</span>
@@ -85,7 +85,7 @@ export default function Header() {
               navigate("/login");
               setIsMenuOpen(false);
             }}
-            className="text-left text-[13px] font-normal uppercase tracking-widest text-orange-600"
+            className="text-left text-[13px] font-normal uppercase tracking-tight text-orange-600"
           >
             Se connecter
           </button>
@@ -102,10 +102,11 @@ function NavLink({ to, children, onClick }) {
       onClick={onClick}
       style={{
         textDecoration: "none",
-        color: "#555",
+        color: "#666",
         fontSize: "14px",
         fontWeight: "500",
         transition: "color 0.2s",
+        fontFamily: "'DM Sans', sans-serif",
       }}
     >
       {children}

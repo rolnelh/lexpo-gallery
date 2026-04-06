@@ -39,8 +39,8 @@ const LoginForm = () => {
                 Content de vous revoir !
               </h2>
               <p className="max-w-md text-sm sm:text-base leading-relaxed text-gray-500">
-                Merci de continuer votre expérience avec nous et de toujours
-                faire confiance au savoir-faire de nos artisans béninois.
+                  Merci de continuer votre expérience avec nous et de toujours
+                  faire confiance au savoir-faire de nos artisans béninois.
               </p>
             </div>
 

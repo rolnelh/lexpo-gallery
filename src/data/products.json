@@ -27,7 +27,7 @@
       "fait main"
     ],
     "color": "#E1F5EE",
-    "image": "https://images.unsplash.com/photo-1594913785162-e6785b493bd2?w=500"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_EQ8Q_BbhN8WxND0lkJ6re5LpmqlxaaBD0g&s"
   },
   {
     "id": "2",
@@ -174,9 +174,6 @@
     "color": "#EAF3DE",
     "image": "https://www.africouleur.com/wp-content/uploads/2022/12/IMG_20221215_153440-scaled.jpg"
   },
-
-
-
   {
     "id": "7",
     "slug": "Sac artisanal pour Dames",
@@ -209,32 +206,32 @@
   },
   {
     "id": "8",
-    "slug": "tableau-metal-recycle-abstrait",
-    "title": "Tableau mural — Métal recyclé et bois",
-    "category": "Art & Déco",
+    "slug": "salon-pneus-recycles-caning-cotonou",
+    "title": "salon 'Caning' en Pneus Upcyclés",
+    "category": "Upcycling",
     "price": 85000,
     "currency": "FCFA",
     "free": false,
     "rating": 4.9,
-    "reviews": 7,
-    "location": "Porto-Novo, Bénin",
+    "reviews": 110,
+    "location": "Cotonou, Bénin",
     "author": {
-      "name": "Issa D.",
-      "initials": "ID",
+      "name": "Koffi A.",
+      "initials": "KA",
       "country": "BJ"
     },
     "payments": [
       "MTN",
       "Espèces"
     ],
-    "description": "Œuvre abstraite réalisée à partir de pièces mécaniques recyclées sur un support en bois de récupération vernis. Pièce unique signée.",
+    "description": "Un ensemble unique alliant la robustesse du pneu recyclé à l'élégance du canage tressé à la main. Ce mobilier éco-responsable incarne l'innovation et le design durable au cœur du Bénin.",
     "tags": [
       "recyclage",
       "art mural",
       "industriel"
     ],
     "color": "#EEEDFE",
-    "image": "https://images.unsplash.com/photo-1541119638723-c51cbe2262aa?w=500"
+    "image": "https://www.swisscontact.org/_Resources/Persistent/a/7/2/3/a7233d7e7f07a41e57fa8cea27612f83347c735e/B%C3%A9nin_FoRCE_JAB%202.jpg"
   },
   {
     "id": "9",
@@ -264,5 +261,125 @@
     ],
     "color": "#FAEEDA",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSTCxg7xlx4SdKBBhM3ML3Ve_nS582cxyyPw&s"
+  },
+  {
+    "id": "10",
+    "slug": "jarre-terracotta-jardin-portonovo",
+    "title": "Jarre en terre cuite émaillée",
+    "category": "Céramique",
+    "price": 15000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 4.9,
+    "reviews": 12,
+    "location": "Porto-Novo, Bénin",
+    "author": {
+      "name": "Moussa T.",
+      "initials": "MT",
+      "country": "BJ"
+    },
+    "payments": [
+      "Moov Money",
+      "MTN Momo"
+    ],
+    "description": "Pièce unique façonnée à la main, idéale pour apporter une touche authentique et minérale à vos espaces extérieurs.",
+    "tags": [
+      "jardin",
+      "décoration",
+      "terracotta"
+    ],
+    "color": "#D27D56",
+    "image": "https://tiimg.tistatic.com/fp/1/008/929/clay-pot-372.jpg"
+  },
+  {
+    "id": "11",
+    "slug": "fauteuil-rotin-tissage-akpakpa",
+    "title": "Fauteuil en rotin 'Vague'",
+    "category": "Osier & Rotin",
+    "price": 45000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 4.7,
+    "reviews": 8,
+    "location": "Cotonou, Bénin",
+    "author": {
+      "name": "Koffi A.",
+      "initials": "KA",
+      "country": "BJ"
+    },
+    "payments": [
+      "MTN Momo",
+      "KkiaPay"
+    ],
+    "description": "Structure légère et résistante, ce fauteuil allie le confort moderne au savoir-faire ancestral du tissage béninois.",
+    "tags": [
+      "mobilier",
+      "design",
+      "naturel"
+    ],
+    "color": "#E5BA73",
+    "image": "https://lebonken.com/images/articles/shop/1632139404-WhatsApp%20Image%202021-09-20%20at%2011.31.03.jpeg"
+  },
+  {
+    "id": "12",
+    "slug": "vase-verre-souffle-bleu-abomey",
+    "title": "Vase en verre soufflé azur",
+    "category": "Verre",
+    "price": 12500,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 4.6,
+    "reviews": 15,
+    "location": "Abomey, Bénin",
+    "author": {
+      "name": "Saliou B.",
+      "initials": "SB",
+      "country": "BJ"
+    },
+    "payments": [
+      "KkiaPay",
+      "FedaPay"
+    ],
+    "description": "Vase décoratif réalisé à partir de verre recyclé soufflé à la bouche. Chaque pièce présente des bulles uniques.",
+    "tags": [
+      "verre",
+      "artisanat",
+      "recyclage"
+    ],
+    "color": "#7FB5B5",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHxzQD-4Z_N3ApN2QAmlds9WG8cMqNEfYAmA&s"
+  },
+  {
+    "id": "13",
+    "slug": "sculpture-bois-ibeji-calebasse-premium-cotonou",
+    "title": "Duo 'Héritage & Lumière' : Ibeji et Calebasse",
+    "category": "Sculpture & Art",
+    "price": 95000,
+    "currency": "FCFA",
+    "free": false,
+    "rating": 45.0,
+    "reviews": 120,
+    "location": "Abomey, Bénin",
+    "author": {
+      "name": "Yéyé K. (L'Atelier de l'Âme)",
+      "initials": "YK",
+      "country": "BJ"
+    },
+    "payments": [
+      "KkiaPay",
+      "FedaPay"
+    ],
+    "description": "Une mise en scène unique alliant une statuette Ibeji en bois d'iroko sculpté à une calebasse lumineuse perforée à la main. Ce duo incarne le dialogue subtil entre l'héritage ancestral béninois et l'esthétique contemporaine.",
+    "tags": [
+      "sculpture",
+      "bois",
+      "art",
+      "calebasse",
+      "design",
+      "décoration",
+      "luxe"
+    ],
+    "color": "#F3E5DC",
+    "image": "https://hotel-benin-maison-rouge-cotonou.com/wp-content/uploads/2019/05/exposition-kifouly-dossou-hotel-maison-rouge-cotonou35.jpg"
   }
 ]
