@@ -1,37 +1,39 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 
+import { Camera, Edit3, Store, MessageSquare, Banknote } from "lucide-react";
+
 const etapes = [
   {
-    num: "📸",
+    icon: Camera,
     title: "Photographiez votre œuvre",
     desc: "Mettez en valeur votre création sous une belle lumière naturelle. Une photo authentique inspire confiance et respect.",
     color: "#E1F5EE",
     textColor: "#0F6E56",
   },
   {
-    num: "✍️",
+    icon: Edit3,
     title: "Créez votre fiche",
     desc: "Décrivez les matériaux utilisés et votre savoir-faire. C'est l'histoire derrière l'objet qui fait sa valeur.",
     color: "#E6F1FB",
     textColor: "#185FA5",
   },
   {
-    num: "🏛️",
+    icon: Store,
     title: "Ouvrez votre vitrine",
     desc: "Votre création rejoint notre galerie exclusive et devient accessible à tous ceux qui cherchent l'exceptionnel.",
     color: "#FAEEDA",
     textColor: "#854F0B",
   },
   {
-    num: "💬",
+    icon: MessageSquare,
     title: "Échangez en direct",
     desc: "Discutez directement avec vos futurs clients. Personnalisez vos commandes selon leurs besoins spécifiques.",
     color: "#FAECE7",
     textColor: "#993C1D",
   },
   {
-    num: "$",
+    icon: Banknote,
     title: "Vivez de votre passion",
     desc: "Encaissez le fruit de votre travail en toute sécurité et continuez à créer des pièces uniques.",
     color: "#EAF3DE",
@@ -58,7 +60,7 @@ export default function How() {
             fontWeight: 700,
             letterSpacing: "0.15em",
             textTransform: "uppercase",
-            color: "#EF9F27", 
+            color: "#EF9F27",
             marginBottom: 12,
           }}
         >
@@ -93,78 +95,82 @@ export default function How() {
             position: "relative",
           }}
         >
-          {etapes.map((s, index) => (
-            <div
-              key={s.num}
-              style={{
-                display: "flex",
-                gap: "25px",
-                paddingBottom: "35px",
-                position: "relative",
-              }}
-            >
+          {etapes.map((s, index) => {
+            const IconComponent = s.icon;
+
+            return (
               <div
+                key={s.title}
                 style={{
                   display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
+                  gap: "25px",
+                  paddingBottom: "35px",
+                  position: "relative",
                 }}
               >
                 <div
                   style={{
-                    width: "36px",
-                    height: "36px",
-                    borderRadius: "50%",
-                    background: s.color,
-                    color: s.textColor,
                     display: "flex",
+                    flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: "center",
-                    fontWeight: "800",
-                    fontSize: "16px",
-                    zIndex: 2,
-                    border: "4px solid #fff",
                   }}
                 >
-                  {s.num}
-                </div>
-                {index !== etapes.length - 1 && (
                   <div
                     style={{
-                      width: "2px",
-                      flexGrow: 1,
-                      background: "#eee",
-                      margin: "8px 0",
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      background: s.color,
+                      color: s.textColor,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      zIndex: 2,
+                      border: "4px solid #fff",
+                      boxShadow: "0 0 0 1px #eee", // Petit contour subtil pour détacher le cercle
+                      flexShrink: 0,
                     }}
-                  />
-                )}
-              </div>
+                  >
+                    <IconComponent size={18} strokeWidth={2} />
+                  </div>
+                  {index !== etapes.length - 1 && (
+                    <div
+                      style={{
+                        width: "2px",
+                        flexGrow: 1,
+                        background: "#eee",
+                        margin: "8px 0",
+                      }}
+                    />
+                  )}
+                </div>
 
-              <div style={{ paddingTop: "6px" }}>
-                <h3
-                  style={{
-                    fontFamily: "'Syne', sans-serif",
-                    fontSize: "17px",
-                    fontWeight: 700,
-                    marginBottom: 6,
-                    color: "#111",
-                  }}
-                >
-                  {s.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "14px",
-                    color: "#666",
-                    lineHeight: 1.6,
-                    maxWidth: "400px",
-                  }}
-                >
-                  {s.desc}
-                </p>
+                <div style={{ paddingTop: "6px" }}>
+                  <h3
+                    style={{
+                      fontFamily: "'Syne', sans-serif",
+                      fontSize: "17px",
+                      fontWeight: 700,
+                      marginBottom: 6,
+                      color: "#111",
+                    }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "14px",
+                      color: "#666",
+                      lineHeight: 1.6,
+                      maxWidth: "400px",
+                    }}
+                  >
+                    {s.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div
@@ -180,6 +186,7 @@ export default function How() {
               width: "100%",
               maxWidth: "450px",
               overflow: "hidden",
+              borderRadius: "16px",
             }}
           >
             <img

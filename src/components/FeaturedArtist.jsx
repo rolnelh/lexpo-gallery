@@ -1,13 +1,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight, Sparkles, Award } from "lucide-react";
 
 const artistData = {
   name: "Président Djangoun",
   realName: "Zinli Roberto",
   slogan: "Le Styliste Fou : L'Upcycling en Haute Couture",
   description:
-    "Créateur béninois autodidacte, Zinli Roberto insuffle une seconde vie radicale aux déchets. Découvrez sa 'Collection Véronique' où le métal recyclé devient une armure futuriste et théâtrale pour une mode durable et engagée.  Il utilise des canettes de boissons, des éponges, des batteries, des capsules ou encore des chutes de tissus pour fabriquer ses vêtements.",
-  callToAction: "Découvrir la Collection →",
+    "Créateur béninois autodidacte, Zinli Roberto insuffle une seconde vie radicale aux déchets. Découvrez sa 'Collection Véronique' où le métal recyclé devient une armure futuriste et théâtrale pour une mode durable et engagée. Il utilise des canettes de boissons, des éponges, des batteries, des capsules ou encore des chutes de tissus pour fabriquer ses vêtements.",
+  callToAction: "Découvrir la Collection",
   profileImage:
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxnJ4JEG1Q7YajxGYPppJR79kGMFnmzK9EwQ&s",
   works: [
@@ -34,253 +35,95 @@ const artistData = {
   ],
 };
 
-export default function FeaturedArtistBlock() {
+export default function FeaturedArtist() {
   const navigate = useNavigate();
 
-  const badgeStyle = {
-    fontFamily: "'Inter', sans-serif",
-    fontSize: "10px",
-    fontWeight: 600,
-    textTransform: "uppercase",
-    letterSpacing: "0.05em",
-    padding: "4px 10px",
-    borderRadius: "100px",
-  };
-
   return (
-    <section
-      style={{ padding: "40px 5%", maxWidth: "1400px", margin: "0 auto" }}
-    >
-      <style>
-        {`
-      @media (max-width: 992px) {
-        .responsive-grid { 
-          grid-template-columns: 1fr !important; 
-          padding: 24px !important;
-        }
-        .text-container { 
-          grid-column: span 1 !important; 
-          order: 2; 
-        }
-        .image-gallery { 
-          grid-column: span 1 !important; 
-          height: 400px !important; 
-          order: 1;
-        }
-      }
-    `}
-      </style>
+    <section className="w-full px-4 sm:px-6 lg:px-6 py-12 md:py-18 max-w-7xl mx-auto">
+      <div className="bg-white rounded-3xl p-6 sm:p-10 lg:p-14 border border-neutral-200/80 shadow-xl shadow-neutral-100/50 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-      <div
-        className="responsive-grid"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(12, 1fr)",
-          gap: "32px",
-          background: "#FFFFFF",
-          padding: "60px",
-          borderRadius: "32px",
-          border: "1px solid #f0f0f0",
-          boxShadow: "0 10px 40px rgba(0,0,0,0.03)",
-          alignItems: "center",
-          fontFamily: "'DM Sans', sans-serif",
-        }}
-      >
-        {/* TEXTE */}
-        <div
-          className="text-container"
-          style={{
-            gridColumn: "span 5",
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-          }}
-        >
-          <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-            <span
-              style={{
-                fontSize: "11px",
-                fontWeight: "bold",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                borderRadius: "100px",
-                padding: "6px 14px",
-                background: "#FAEEDA",
-                color: "#854F0B",
-              }}
-            >
+        <div className="lg:col-span-5 flex flex-col items-start gap-5 order-2 lg:order-1">
+
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="inline-flex items-center gap-1.5 bg-[#FAEEDA] text-[#854F0B] text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
+              <Sparkles size={13} />
               Artiste à la Une
             </span>
-            <span
-              style={{
-                fontSize: "11px",
-                fontWeight: "bold",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                borderRadius: "100px",
-                padding: "6px 14px",
-                background: "#EF9F27",
-                color: "#fff",
-              }}
-            >
+            <span className="inline-flex items-center gap-1.5 bg-[#EF9F27] text-white text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full">
+              <Award size={13} />
               Collection Véronique
             </span>
           </div>
 
-          <h2
-            style={{
-              fontFamily: "'Syne', sans-serif",
-              fontSize: "clamp(32px, 5vw, 48px)",
-              fontWeight: 600,
-              lineHeight: 1,
-              color: "#111",
-              margin: 0,
-            }}
-          >
-            {artistData.name} <br />
-            <small
-              style={{
-                fontSize: "0.4em",
-                color: "#EF9F27",
-                fontWeight: 600,
-                textTransform: "uppercase",
-                tracking: "0.2em",
-              }}
-            >
+          <div>
+            <h2 className="font-syne text-3xl sm:text-4xl md:text-4xl font-normal tracking-tight text-neutral-900 leading-none">
+              {artistData.name}
+            </h2>
+            <span className="block text-xs sm:text-sm font-bold text-[#EF9F27] uppercase tracking-widest mt-2">
               {artistData.realName}
-            </small>
-          </h2>
+            </span>
+          </div>
 
-          <p
-            style={{
-              fontSize: "16px",
-              color: "#666",
-              lineHeight: 1.6,
-              margin: 0,
-              fontStyle: "italic",
-              borderLeft: "2px solid #EF9F27",
-              paddingLeft: "15px",
-            }}
-          >
+          <blockquote className="border-l-2 border-[#EF9F27] pl-4 italic text-neutral-600 text-sm sm:text-base font-medium">
             "{artistData.slogan}"
-          </p>
+          </blockquote>
 
-          <p
-            style={{
-              fontSize: "15px",
-              color: "#555",
-              lineHeight: 1.6,
-              marginBottom: "10px",
-            }}
-          >
+          <p className="text-neutral-600 text-sm sm:text-base leading-relaxed">
             {artistData.description}
           </p>
 
           <button
             onClick={() => navigate(`/president-djangoun`)}
-            style={{
-              alignSelf: "flex-start",
-              background: "#111",
-              color: "#fff",
-              fontFamily: "'Syne', sans-serif",
-              fontWeight: "bold",
-              fontSize: "14px",
-              padding: "18px 40px",
-              borderRadius: "100px",
-              border: "none",
-              cursor: "pointer",
-              transition: "all 0.3s ease",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = "#EF9F27")}
-            onMouseLeave={(e) => (e.currentTarget.style.background = "#111")}
+            className="group mt-2 inline-flex items-center justify-center gap-3 bg-neutral-900 hover:bg-[#EF9F27] text-white font-syne text-sm font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 w-full sm:w-auto"
           >
             {artistData.callToAction}
+            <ArrowRight
+              size={16}
+              className="transition-transform duration-300 group-hover:translate-x-1"
+            />
           </button>
         </div>
 
-        <div
-          className="image-gallery"
-          style={{
-            gridColumn: "span 7",
-            display: "grid",
-            gridTemplateColumns: "repeat(10, 1fr)",
-            gridTemplateRows: "repeat(10, 1fr)",
-            gap: "12px",
-            height: "550px",
-          }}
-        >
-          <div
-            style={{
-              gridColumn: "span 4",
-              gridRow: "span 6",
-              borderRadius: "20px",
-              overflow: "hidden",
-            }}
-          >
+        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 h-[380px] sm:h-[480px] md:h-[520px] order-1 lg:order-2">
+
+          <div className="group relative col-span-1 sm:col-span-1 row-span-2 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.profileImage}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              alt=""
+              alt={artistData.name}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          <div
-            style={{
-              gridColumn: "span 3",
-              gridRow: "span 5",
-              borderRadius: "20px",
-              overflow: "hidden",
-            }}
-          >
+          <div className="group relative col-span-1 sm:col-span-1 row-span-1 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.works[0].image}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              alt=""
+              alt={artistData.works[0].title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
 
-          <div
-            style={{
-              gridColumn: "span 3",
-              gridRow: "span 3",
-              borderRadius: "20px",
-              overflow: "hidden",
-            }}
-          >
+          <div className="group relative col-span-1 sm:col-span-1 row-span-1 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.works[1].image}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              alt=""
+              alt={artistData.works[1].title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
 
-          <div
-            style={{
-              gridColumn: "span 4",
-              gridRow: "span 4",
-              borderRadius: "20px",
-              overflow: "hidden",
-            }}
-          >
+          <div className="group relative col-span-1 sm:col-span-1 row-span-1 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.works[2].image}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              alt=""
+              alt={artistData.works[2].title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
 
-          <div
-            style={{
-              gridColumn: "span 6",
-              gridRow: "span 7",
-              borderRadius: "20px",
-              overflow: "hidden",
-            }}
-          >
+          <div className="group relative col-span-2 sm:col-span-1 row-span-1 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.works[3].image}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              alt=""
+              alt={artistData.works[3].title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </div>
         </div>

@@ -8,7 +8,7 @@ export default function Hero() {
     <section
       style={{
         textAlign: "center",
-        padding: "100px 5% 80px",
+        padding: "70px 5% 80px",
         background: "#fff",
         borderBottom: "1px solid #f5f5f5",
       }}
@@ -34,7 +34,7 @@ export default function Hero() {
         style={{
           fontFamily: "'Syne', sans-serif",
           fontSize: "clamp(2.2rem, 6vw, 3.8rem)",
-          fontWeight: 600,
+          fontWeight: 500,
           lineHeight: 1.05,
           marginBottom: 24,
           maxWidth: 900,
@@ -52,7 +52,7 @@ export default function Hero() {
           fontSize: "18px",
           fontWeight: "normal",
           maxWidth: 620,
-          margin: "0 auto 48px",
+          margin: "0 auto 38px",
           lineHeight: 1.6,
           // fontFamily: "'Syne', sans-serif",
         }}
@@ -110,10 +110,44 @@ export default function Hero() {
         >
           Découvrir les talents
         </button>
+
       </div>
 
-      <div style={{ marginTop: "60px", fontSize: "14px", color: "#aaa" }}>
-        Déjà +500 artisans africains nous font confiance
+      <div className="mt-14 flex items-center justify-center gap-3.5 flex-wrap">
+
+        <div className="flex -space-x-2.5 overflow-hidden p-0.5">
+          <img
+            className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm"
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+            alt="Artisan"
+          />
+          <img
+            className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm"
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+            alt="Artisan"
+          />
+          <img
+            className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm"
+            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&auto=format&fit=crop&q=80"
+            alt="Artisan"
+          />
+          <img
+            className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm"
+            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80"
+            alt="Artisan"
+          />
+          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#EF9F27] font-bold text-white text-xs ring-2 ring-white shadow-sm">
+            +500
+          </div>
+        </div>
+
+        {/* Texte */}
+        <p className="text-sm font-medium text-neutral-600">
+          <span className="font-bold text-neutral-900">
+            +500 artisans africains
+          </span>{" "}
+          nous font déjà confiance.
+        </p>
       </div>
     </section>
   );

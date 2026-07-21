@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Menu, X, ArrowRight, User } from "lucide-react";
+import { Menu, X, ArrowRight, User, Sparkles } from "lucide-react";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -13,13 +13,13 @@ export default function Header() {
           onClick={() => navigate("/")}
           className="flex cursor-pointer items-center gap-3 transition-opacity hover:opacity-80"
         >
-          <div className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 overflow-hidden">
-            <img
-              src="/images/icons8-fileur.gif"
-              alt="Icon"
-              className="w-5 h-5 object-contain grayscale group-hover:grayscale-0 transition-all"
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-[#EF9F27]/10 to-[#EF9F27]/30 text-[#EF9F27] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#EF9F27] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#EF9F27]/25">
+            <Sparkles
+              size={18}
+              className="transition-transform duration-300 group-hover:rotate-12"
             />
           </div>
+          
           <span className="font-syne text-base font-bold tracking-tight text-black">
             L'<span className="text-[#EF9F27]">Expo</span>
           </span>
@@ -28,22 +28,22 @@ export default function Header() {
         <nav className="hidden lg:flex items-center gap-8 tracking-tight">
           <NavLink to="/explorer">Découvrir les créations</NavLink>
           <NavLink to="/artisans">Nos Artisans</NavLink>
-          <NavLink to="/sur-mesure">Demande sur mesure</NavLink>
+          {/* <NavLink to="/sur-mesure">Demande sur mesure</NavLink> */}
           <NavLink to="/aide">Aide</NavLink>
         </nav>
 
         <div className="flex items-center gap-3 md:gap-6">
           <button
             onClick={() => navigate("/login")}
-            className="hidden sm:flex items-center gap-2 text-[13px] font-normal tracking-tight text-black hover:text-stone-950 transition-colors"
+            className="hidden sm:flex items-center gap-2 text-[15px] font-normal tracking-tight text-black hover:text-stone-950 transition-colors"
           >
-            <User size={16} />
+            {/* <User size={16} /> */}
             <span>Se connecter</span>
           </button>
 
           <button
             onClick={() => navigate("/publier")}
-            className="group flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2.5 text-[11px] font-bold uppercase text-white transition-all"
+            className="group flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2 text-[14px] font-normal uppercase text-white transition-all"
           >
             <span className="hidden xs:inline">Exposer mon travail</span>
             <span className="xs:hidden">Exposer</span>
@@ -76,16 +76,16 @@ export default function Header() {
           <NavLink to="/artisans" onClick={() => setIsMenuOpen(false)}>
             Nos Artisans
           </NavLink>
-          <NavLink to="/sur-mesure" onClick={() => setIsMenuOpen(false)}>
+          {/* <NavLink to="/sur-mesure" onClick={() => setIsMenuOpen(false)}>
             Demande sur mesure
-          </NavLink>
+          </NavLink> */}
           <hr className="border-stone-50" />
           <button
             onClick={() => {
               navigate("/login");
               setIsMenuOpen(false);
             }}
-            className="text-left text-[13px] font-normal uppercase tracking-tight text-orange-600"
+            className="text-left text-[15px] font-normal uppercase tracking-tight text-orange-600"
           >
             Se connecter
           </button>
@@ -103,7 +103,7 @@ function NavLink({ to, children, onClick }) {
       style={{
         textDecoration: "none",
         color: "#666",
-        fontSize: "14px",
+        fontSize: "15px",
         fontWeight: "500",
         transition: "color 0.2s",
         fontFamily: "'DM Sans', sans-serif",

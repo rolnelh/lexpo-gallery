@@ -1,134 +1,88 @@
 import React from "react";
+import {
+  Scissors,
+  ShoppingBag,
+  Hammer,
+  Briefcase,
+  Sparkles,
+  Shirt,
+  Gem,
+  Palette,
+  Globe,
+  Crown,
+  Recycle,
+  PenLine,
+} from "lucide-react";
 
 const partners = [
-  { name: "Tissage Kanvo", icon: "🧵" },
-  { name: "Yelian Handmade", icon: "👜" },
-  { name: "Forge d'Abomey", icon: "🔨" },
-  { name: "Maroquinerie d'Art", icon: "💼" },
-  { name: "Céramique de Sè", icon: "🏺" },
-  { name: "Teinture Indigo", icon: "🌿" },
-  { name: "Bijouterie Bronze", icon: "✨" },
-  { name: "Sculpture sur Teck", icon: "🪑" },
-  { name: "Bénin Digital", icon: "🇧🇯" },
-  { name: "Luxe Durable", icon: "💎" },
-  { name: "Upcycling BJ", icon: "♻️" },
-  { name: "Broderie Main", icon: "🪡" },
+  { name: "Tissage Kanvo", icon: Scissors },
+  { name: "Yelian Handmade", icon: ShoppingBag },
+  { name: "Forge d'Abomey", icon: Hammer },
+  { name: "Maroquinerie d'Art", icon: Briefcase },
+  { name: "Céramique de Sè", icon: Sparkles },
+  { name: "Teinture Indigo", icon: Shirt },
+  { name: "Bijouterie Bronze", icon: Gem },
+  { name: "Sculpture sur Teck", icon: Palette },
+  { name: "Bénin Digital", icon: Globe },
+  { name: "Luxe Durable", icon: Crown },
+  { name: "Upcycling BJ", icon: Recycle },
+  { name: "Broderie Main", icon: PenLine },
 ];
 
 export default function CreatorPage() {
   return (
-    <section
-      style={{ padding: "80px 0", backgroundColor: "#fff", overflow: "hidden" }}
-    >
-      <div
-        style={{ textAlign: "center", marginBottom: "60px", padding: "0 20px" }}
-      >
-        <h2
-          style={{
-            fontFamily: "'Syne', sans-serif",
-            fontSize: "clamp(28px, 5vw, 42px)",
-            fontWeight: 600,
-            color: "#111",
-            letterSpacing: "-0.02em",
-            marginBottom: "16px",
-          }}
-        >
+    <section className="relative w-full py-16 md:py-24 bg-white overflow-hidden">
+
+      <style>
+        {`
+          @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 35s linear infinite;
+          }
+          .marquee-mask {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          }
+        `}
+      </style>
+
+      <div className="text-center mb-12 md:mb-16 px-4 max-w-3xl mx-auto">
+        <h2 className="font-syne text-2xl sm:text-4xl md:text-5xl font-semibold text-neutral-900 tracking-tight mb-4">
           Un écosystème de talents locaux
         </h2>
-        <p
-          style={{
-            color: "#666",
-            fontSize: "18px",
-            maxWidth: "700px",
-            margin: "0 auto",
-            lineHeight: "1.6",
-          }}
-        >
+        <p className="text-neutral-600 text-base sm:text-lg leading-relaxed">
           Du tissage traditionnel de Kanvo à la maroquinerie moderne, nous
           célébrons l'excellence du fait-main béninois.
         </p>
       </div>
 
-      <div
-        className="marquee-container"
-        style={{
-          display: "flex",
-          position: "relative",
-          width: "90%",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          className="marquee-content"
-          style={{
-            display: "flex",
-            gap: "24px",
-            animation: "scroll 40s linear infinite",
-            padding: "10px 0",
-          }}
-        >
+      <div className="group relative w-full overflow-hidden marquee-mask py-4">
+        <div className="animate-marquee flex gap-4 md:gap-6 group-hover:[animation-play-state:paused]">
+          {/* Doubler la liste pour créer une boucle sans coupure */}
+          {[...partners, ...partners].map((item, index) => {
+            const IconComponent = item.icon;
 
-          {[...partners, ...partners, ...partners].map((item, index) => (
-            <div
-              key={index}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "12px",
-                padding: "14px 28px",
-                background: "#FFFFFF",
-                border: "1px solid #F3F4F6",
-                borderRadius: "100px",
-                whiteSpace: "nowrap",
-                boxShadow: "0 4px 15px rgba(0,0,0,0.04)",
-                transition: "transform 0.3s ease",
-              }}
-            >
-              <span style={{ fontSize: "20px" }}>{item.icon}</span>
-              <span
-                style={{
-                  fontWeight: 700,
-                  color: "#1F2937",
-                  fontSize: "15px",
-                  fontFamily: "'Inter', sans-serif",
-                }}
+            return (
+              <div
+                key={index}
+                className="flex items-center gap-3 px-6 py-3.5 bg-white border border-neutral-200/80 rounded-full shadow-sm hover:shadow-md hover:border-[#EF9F27]/50 transition-all duration-300 shrink-0 cursor-pointer select-none"
               >
-                {item.name}
-              </span>
-            </div>
-          ))}
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-[#FAF9F6] text-[#EF9F27]">
+                  <IconComponent size={18} strokeWidth={2} />
+                </div>
+                <span className="font-syne font-bold text-neutral-800 text-sm md:text-base whitespace-nowrap">
+                  {item.name}
+                </span>
+              </div>
+            );
+          })}
         </div>
       </div>
-
-      <style>
-        {`
-          @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-33.33%); }
-          }
-          
-          .marquee-container::before, .marquee-container::after {
-            content: "";
-            position: absolute;
-            top: 0; width: 250px; height: 100%;
-            z-index: 2;
-            pointer-events: none;
-          }
-          
-          .marquee-container::before {
-            left: 0; background: linear-gradient(to right, white, transparent);
-          }
-          
-          .marquee-container::after {
-            right: 0; background: linear-gradient(to left, white, transparent);
-          }
-
-          /* Petite astuce : on ralentit au survol pour laisser lire */
-          .marquee-container:hover .marquee-content {
-            animation-play-state: paused;
-          }
-        `}
-      </style>
     </section>
   );
 }

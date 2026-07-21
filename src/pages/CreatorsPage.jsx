@@ -164,7 +164,7 @@ const CreatorsPage = () => {
   return (
     <>
       <Helmet>
-        <title>Explorer les créations — Chariow Artisan</title>
+        <title>Explorer les créations —  Artisans, créateurs, stylistes ...</title>
         <meta
           name="description"
           content="Découvrez des œuvres uniques et des produits faits main par nos artisans locaux. Art, mode éthique et objets recyclés."

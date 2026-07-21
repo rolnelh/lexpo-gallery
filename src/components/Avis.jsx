@@ -1,11 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import  navigate, { useNavigate } from "react-router-dom";
+
+import { Hammer, Star, Globe, ShieldCheck, Quote, CheckCircle2 } from "lucide-react";
 
 const stats = [
-  { label: "Artisans inscrits", value: "1.2K+", icon: "⚒️" },
-  { label: "Note créateurs", value: "4,9/5", icon: "⭐" },
-  { label: "Ventes locales", value: "95%", icon: "🌍" },
-  { label: "Paiement sécurisé", value: "Garantie", icon: "🛡️" },
+  { label: "Artisans inscrits", value: "1.2K+", icon: Hammer },
+  { label: "Note créateurs", value: "4,9/5", icon: Star },
+  { label: "Ventes locales", value: "95%", icon: Globe },
+  { label: "Paiement sécurisé", value: "Garantie", icon: ShieldCheck },
 ];
 
 const avisClients = [
@@ -38,7 +40,8 @@ export default function Avis() {
   const navigate = useNavigate();
 
   return (
-    <section style={{ padding: "80px 5%", background: "#fff" }}>
+    <section style={{ padding: "80px 5%", background: "#fff", maxWidth: "1280px", margin: "0 auto" }}>
+
       <div
         style={{
           display: "grid",
@@ -47,34 +50,60 @@ export default function Avis() {
           marginBottom: "80px",
         }}
       >
-        {stats.map((s, i) => (
-          <div
-            key={i}
-            style={{
-              padding: "30px",
-              textAlign: "center",
-              borderRadius: "20px",
-              border: "1px solid #f0f0f0",
-              boxShadow: "0 4px 20px rgba(0,0,0,0.02)",
-            }}
-          >
-            <div style={{ fontSize: "24px", marginBottom: "10px" }}>
-              {s.icon}
-            </div>
+        {stats.map((s, i) => {
+          const IconComponent = s.icon;
+
+          return (
             <div
+              key={i}
               style={{
-                fontSize: "28px",
-                fontWeight: "800",
-                marginBottom: "5px",
+                padding: "28px 20px",
+                textAlign: "center",
+                borderRadius: "20px",
+                border: "1px solid #f0f0f0",
+                boxShadow: "0 4px 20px rgba(0,0,0,0.02)",
+                background: "#fff",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
               }}
             >
-              {s.value}
+              <div
+                style={{
+                  width: "48px",
+                  height: "48px",
+                  borderRadius: "50%",
+                  background: "#FAF9F6",
+                  color: "#EF9F27",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "12px",
+                }}
+              >
+                <IconComponent size={22} strokeWidth={2} />
+              </div>
+              <div
+                style={{
+                  fontSize: "28px",
+                  fontWeight: "500",
+                  // fontFamily: "'Syne', sans-serif",
+                  marginBottom: "4px",
+                  color: "#111",
+                }}
+              >
+                {s.value}
+              </div>
+              <div style={{ fontSize: "14px", color: "#666", fontWeight: 500 }}>
+                {s.label}
+              </div>
             </div>
-            <div style={{ fontSize: "14px", color: "#666" }}>{s.label}</div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
+      {/* BLOC TÉMOIGNAGES & GALERIE */}
       <div
         style={{
           display: "flex",
@@ -83,17 +112,21 @@ export default function Avis() {
           alignItems: "flex-start",
         }}
       >
+        {/* CÔTÉ GAUCHE : AVIS CLIENTS */}
         <div style={{ flex: "1 1 450px" }}>
           <h2
             style={{
               fontFamily: "'Syne', sans-serif",
               fontSize: "36px",
-              fontWeight: "400",
+              fontWeight: "600",
               marginBottom: "15px",
+              color: "#111",
             }}
           >
             Le succès de nos créateurs
           </h2>
+
+          {/* NOTE GLOBALE */}
           <div
             style={{
               display: "flex",
@@ -102,11 +135,16 @@ export default function Avis() {
               marginBottom: "40px",
             }}
           >
-            <div style={{ color: "#EF9F27", fontSize: "20px" }}>★★★★★</div>
-            <span style={{ fontWeight: "700" }}>4,9 sur 5</span>
-            <span style={{ color: "#aaa" }}>(+1 200 témoignages)</span>
+            <div style={{ display: "flex", gap: "2px", color: "#EF9F27" }}>
+              {[...Array(5)].map((_, index) => (
+                <Star key={index} size={18} fill="#EF9F27" stroke="none" />
+              ))}
+            </div>
+            <span style={{ fontWeight: "700", color: "#111" }}>4,9 sur 5</span>
+            <span style={{ color: "#888", fontSize: "14px" }}>(+1 200 témoignages)</span>
           </div>
 
+          {/* LISTE DES CARTE D'AVIS */}
           {avisClients.map((a, i) => (
             <div
               key={i}
@@ -118,29 +156,28 @@ export default function Avis() {
                 position: "relative",
               }}
             >
-              <div
+              <Quote
+                size={32}
+                color="#E5E5E5"
                 style={{
-                  fontSize: "40px",
-                  color: "#ddd",
                   position: "absolute",
-                  top: "10px",
-                  left: "20px",
-                  fontFamily: "serif",
+                  top: "16px",
+                  right: "20px",
+                  transform: "rotate(180deg)",
                 }}
-              >
-                “
-              </div>
+              />
               <p
                 style={{
-                  fontSize: "16px",
-                  color: "#333",
+                  fontSize: "15px",
+                  color: "#444",
                   lineHeight: 1.6,
                   marginBottom: "20px",
                   position: "relative",
-                  paddingLeft: "10px",
+                  zIndex: 1,
+                  fontStyle: "italic",
                 }}
               >
-                {a.texte}
+                « {a.texte} »
               </p>
               <div
                 style={{ display: "flex", alignItems: "center", gap: "12px" }}
@@ -148,33 +185,46 @@ export default function Avis() {
                 <img
                   src={a.avatar}
                   style={{
-                    width: "40px",
-                    height: "40px",
+                    width: "44px",
+                    height: "44px",
                     borderRadius: "50%",
                     objectFit: "cover",
                   }}
                   alt={a.nom}
                 />
                 <div>
-                  <div style={{ fontWeight: "700", fontSize: "14px" }}>
+                  <div
+                    style={{
+                      fontWeight: "700",
+                      fontSize: "14px",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "6px",
+                    }}
+                  >
                     {a.nom}
                     {a.verifie && (
                       <span
                         style={{
                           color: "#854F0B",
-                          fontSize: "10px",
-                          marginLeft: "8px",
+                          fontSize: "11px",
+                          fontWeight: 600,
                           background: "#FAEEDA",
-                          padding: "2px 8px",
-                          borderRadius: "10px",
+                          padding: "3px 8px",
+                          borderRadius: "100px",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "4px",
                         }}
                       >
-                        ✓ Artisan vérifié
+                        <CheckCircle2 size={12} color="#854F0B" /> Artisan vérifié
                       </span>
                     )}
                   </div>
-                  <div style={{ color: "#EF9F27", fontSize: "10px" }}>
-                    ★★★★★
+                  <div style={{ display: "flex", gap: "2px", color: "#EF9F27", marginTop: "3px" }}>
+                    {[...Array(5)].map((_, index) => (
+                      <Star key={index} size={12} fill="#EF9F27" stroke="none" />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -182,6 +232,7 @@ export default function Avis() {
           ))}
         </div>
 
+        {/* CÔTÉ DROIT : MOSAÏQUE D'IMAGES */}
         <div
           style={{
             flex: "1 1 350px",
@@ -240,11 +291,12 @@ export default function Avis() {
                 height: "220px",
                 objectFit: "cover",
               }}
-              alt=""
+              alt="Artisanat"
             />
           </div>
         </div>
       </div>
     </section>
+ 
   );
 }
