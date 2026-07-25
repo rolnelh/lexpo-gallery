@@ -4,7 +4,6 @@ import App from "./App";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { Analytics } from "@vercel/analytics/react";
 
-// Remplace par ton ID client Google Cloud Console
 const GOOGLE_CLIENT_ID = "920633833640-qtr9d0d0ns21f2gg84dku9mfb5mv4nif.apps.googleusercontent.com";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

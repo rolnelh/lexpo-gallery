@@ -2,7 +2,7 @@ import axios from "axios";
 
 // 1. Création d'une instance Axios pré-configurée
 const api = axios.create({
-  baseURL: "http://127.0.0.1:8000/api", // L'adresse de ton API Laravel
+  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
