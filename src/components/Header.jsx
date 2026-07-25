@@ -1,14 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Menu, X, ArrowRight, User, Sparkles } from "lucide-react";
+import { Menu, X, ArrowRight, User, Sparkles, LogOut } from "lucide-react";
 
 export default function Header() {
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [user, setUser] = useState(null);
+
+  // Charger les données de l'utilisateur au montage du composant
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (e) {
+        console.error("Erreur de lecture du profil", e);
+      }
+    }
+  }, []);
+
+  // Handler Déconnexion
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    setUser(null);
+    navigate("/login");
+  };
 
   return (
     <header className="sticky top-0 z-[1000] h-[72px] w-full border-b border-stone-100 bg-white/80 backdrop-blur-md px-[4%]">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between">
+        {/* Logo */}
         <div
           onClick={() => navigate("/")}
           className="flex cursor-pointer items-center gap-3 transition-opacity hover:opacity-80"
@@ -19,31 +41,66 @@ export default function Header() {
               className="transition-transform duration-300 group-hover:rotate-12"
             />
           </div>
-          
+
           <span className="font-syne text-base font-bold tracking-tight text-black">
             L'<span className="text-[#EF9F27]">Expo</span>
           </span>
         </div>
 
+        {/* Navigation Desktop */}
         <nav className="hidden lg:flex items-center gap-8 tracking-tight">
           <NavLink to="/explorer">Découvrir les créations</NavLink>
           <NavLink to="/artisans">Nos Artisans</NavLink>
-          {/* <NavLink to="/sur-mesure">Demande sur mesure</NavLink> */}
-          <NavLink to="/aide">Aide</NavLink>
         </nav>
 
+        {/* Actions à droite */}
         <div className="flex items-center gap-3 md:gap-6">
-          <button
-            onClick={() => navigate("/login")}
-            className="hidden sm:flex items-center gap-2 text-[15px] font-normal tracking-tight text-black hover:text-stone-950 transition-colors"
-          >
-            {/* <User size={16} /> */}
-            <span>Se connecter</span>
-          </button>
+          {user ? (
+            /* Utilisateur Connecté */
+            <div className="hidden sm:flex items-center gap-3 bg-stone-50 py-1.5 px-3 rounded-full border border-stone-200">
+              <div
+                onClick={() => navigate("/dashboard")}
+                className="flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity"
+              >
+                {user.avatar ? (
+                  <img
+                    src={user.avatar}
+                    alt={user.name}
+                    referrerPolicy="no-referrer"
+                    className="h-8 w-8 rounded-full object-cover border border-stone-200"
+                  />
+                ) : (
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-stone-900 text-xs font-bold text-white">
+                    {user.name ? user.name.charAt(0).toUpperCase() : "U"}
+                  </div>
+                )}
+                <span className="text-sm font-medium text-stone-800 max-w-[120px] truncate">
+                  {user.name}
+                </span>
+              </div>
+
+              {/* Bouton déconnexion rapide */}
+              <button
+                onClick={handleLogout}
+                title="Se déconnecter"
+                className="text-stone-400 hover:text-red-500 transition-colors p-1"
+              >
+                <LogOut size={16} />
+              </button>
+            </div>
+          ) : (
+            /* Utilisateur Non-Connecté */
+            <button
+              onClick={() => navigate("/login")}
+              className="hidden sm:flex items-center gap-2 text-[15px] font-normal tracking-tight text-black hover:text-stone-950 transition-colors cursor-pointer"
+            >
+              <span>Se connecter</span>
+            </button>
+          )}
 
           <button
             onClick={() => navigate("/publier")}
-            className="group flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2 text-[14px] font-normal uppercase text-white transition-all"
+            className="group flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2 text-[14px] font-normal uppercase text-white transition-all cursor-pointer"
           >
             <span className="hidden xs:inline">Exposer mon travail</span>
             <span className="xs:hidden">Exposer</span>
@@ -62,12 +119,12 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Menu Mobile */}
       <div
-        className={`absolute left-0 top-[72px] w-full border-b border-stone-100 bg-white p-6 shadow-xl transition-all duration-300 lg:hidden ${
-          isMenuOpen
+        className={`absolute left-0 top-[72px] w-full border-b border-stone-100 bg-white p-6 shadow-xl transition-all duration-300 lg:hidden ${isMenuOpen
             ? "translate-y-0 opacity-100"
             : "-translate-y-10 opacity-0 pointer-events-none"
-        }`}
+          }`}
       >
         <div className="flex flex-col gap-6">
           <NavLink to="/explorer" onClick={() => setIsMenuOpen(false)}>
@@ -76,19 +133,53 @@ export default function Header() {
           <NavLink to="/artisans" onClick={() => setIsMenuOpen(false)}>
             Nos Artisans
           </NavLink>
-          {/* <NavLink to="/sur-mesure" onClick={() => setIsMenuOpen(false)}>
-            Demande sur mesure
-          </NavLink> */}
-          <hr className="border-stone-50" />
-          <button
-            onClick={() => {
-              navigate("/login");
-              setIsMenuOpen(false);
-            }}
-            className="text-left text-[15px] font-normal uppercase tracking-tight text-orange-600"
-          >
-            Se connecter
-          </button>
+
+          <hr className="border-stone-100" />
+
+          {user ? (
+            <div className="flex items-center justify-between pt-2">
+              <div className="flex items-center gap-3">
+                {user.avatar ? (
+                  <img
+                    src={user.avatar}
+                    alt={user.name}
+                    referrerPolicy="no-referrer"
+                    className="h-10 w-10 rounded-full object-cover"
+                  />
+                ) : (
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-900 font-bold text-white">
+                    {user.name ? user.name.charAt(0).toUpperCase() : "U"}
+                  </div>
+                )}
+                <div className="flex flex-col">
+                  <span className="text-sm font-semibold text-stone-900">
+                    {user.name}
+                  </span>
+                  <span className="text-xs text-stone-400">{user.email}</span>
+                </div>
+              </div>
+
+              <button
+                onClick={() => {
+                  handleLogout();
+                  setIsMenuOpen(false);
+                }}
+                className="text-xs font-semibold text-red-500 uppercase tracking-wider"
+              >
+                Déconnexion
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => {
+                navigate("/login");
+                setIsMenuOpen(false);
+              }}
+              className="text-left text-[15px] font-normal uppercase tracking-tight text-orange-600"
+            >
+              Se connecter
+            </button>
+          )}
         </div>
       </div>
     </header>

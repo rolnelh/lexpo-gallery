@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { useNavigate, Link } from "react-router-dom";
+import { Sparkles} from "lucide-react";
+
+
 import {
   LayoutDashboard,
   ShoppingBag,
@@ -15,6 +19,7 @@ import BoutiqueView from "../components/DashboardComponents/BoutiqueView";
 
 
 const MyDashboard = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("aperçu");
 
   const renderContent = () => {
@@ -42,12 +47,19 @@ const MyDashboard = () => {
       </Helmet>
 
       <aside className="fixed h-full w-64 border-r border-gray-100 bg-white p-6 hidden md:block">
-        <div className="mb-10 flex items-center gap-2.5 px-2">
-          <div className="h-8 w-8 rounded-lg bg-[#EF9F27] flex items-center justify-center">
-            <span className="text-white font-bold text-xs italic">E</span>
+        <div
+          onClick={() => navigate("/")}
+          className="flex cursor-pointer items-center gap-3 transition-opacity hover:opacity-80"
+        >
+          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-[#EF9F27]/10 to-[#EF9F27]/30 text-[#EF9F27] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#EF9F27] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#EF9F27]/25">
+            <Sparkles
+              size={18}
+              className="transition-transform duration-300 group-hover:rotate-12"
+            />
           </div>
-          <span className="font-syne text-lg font-bold tracking-tight">
-            L'/<span className="text-[#EF9F27]">Expo</span>
+
+          <span className="font-syne text-base font-bold tracking-tight text-black">
+            L'<span className="text-[#EF9F27]">Expo</span>
           </span>
         </div>
 
@@ -95,11 +107,10 @@ const SidebarItem = ({
 }) => (
   <button
     onClick={onClick}
-    className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-[14px] font-semibold transition-all ${
-      active
+    className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-[14px] font-semibold transition-all ${active
         ? "bg-black text-white shadow-md shadow-black/10"
         : `${color} hover:bg-gray-50 hover:text-black`
-    }`}
+      }`}
   >
     {icon}
     {label}
