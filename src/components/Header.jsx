@@ -42,7 +42,7 @@ export default function Header() {
             />
           </div>
 
-          <span className="font-syne text-base font-bold tracking-tight text-black">
+          <span className="font-Quicksand text-base font-bold tracking-tight text-black">
             L'<span className="text-[#EF9F27]">Expo</span>
           </span>
         </div>
@@ -197,7 +197,7 @@ function NavLink({ to, children, onClick }) {
         fontSize: "15px",
         fontWeight: "500",
         transition: "color 0.2s",
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'Quicksand', sans-serif",
       }}
     >
       {children}

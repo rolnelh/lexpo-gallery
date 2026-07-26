@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-[#EF9F27] text-white shadow-sm transition-transform group-hover:scale-105">
               <ShoppingBag size={16} strokeWidth={2.5} />
             </div>
-            <span className="font-syne text-lg font-bold tracking-tight text-neutral-900">
+            <span className="font-Quicksand text-lg font-bold tracking-tight text-neutral-900">
               L'<span className="text-[#EF9F27]">Expo</span>
             </span>
           </div>

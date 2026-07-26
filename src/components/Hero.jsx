@@ -11,30 +11,59 @@ export default function Hero() {
         padding: "70px 5% 80px",
         background: "#fff",
         borderBottom: "1px solid #f5f5f5",
+        fontFamily: "'Quicksand', sans-serif",
+
       }}
     >
-      <span
+
+      <div
         style={{
-          display: "inline-block",
-          background: "#FAEEDA",
-          color: "#854F0B",
-          fontSize: 11,
-          fontWeight: 700,
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          padding: "6px 20px",
-          borderRadius: 100,
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "10px",
+          background: "#f4f4f5",
+          padding: "10px 16px 10px 6px",
+          borderRadius: "100px",
           marginBottom: 32,
         }}
       >
-        Artisans, créateurs, stylistes ...
-      </span>
+        {/* Groupe d'avatars superposés */}
+        <div className="flex -space-x-2 overflow-hidden">
+          <img
+            className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover"
+            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+            alt="Artisan"
+          />
+          <img
+            className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover"
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
+            alt="Artisan"
+          />
+          <img
+            className="inline-block h-7 w-7 rounded-full ring-2 ring-white object-cover"
+            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&auto=format&fit=crop&q=80"
+            alt="Artisan"
+          />
+        </div>
+
+        {/* Texte du badge */}
+        <span
+          style={{
+            fontSize: 12,
+            fontWeight: 600,
+            color: "#3f3f46",
+            letterSpacing: "-0.01em",
+          }}
+        >
+          +500 artisans africains nous font confiance
+        </span>
+      </div>
 
       <h1
         style={{
-          fontFamily: "'Syne', sans-serif",
+          fontFamily: "'Quicksand', sans-serif",
           fontSize: "clamp(2.2rem, 6vw, 3.8rem)",
-          fontWeight: 500,
+          fontWeight: 600,
           lineHeight: 1.05,
           marginBottom: 24,
           maxWidth: 900,
@@ -52,9 +81,8 @@ export default function Hero() {
           fontSize: "18px",
           fontWeight: "normal",
           maxWidth: 620,
-          margin: "0 auto 38px",
+          margin: "15px auto 38px",
           lineHeight: 1.6,
-          // fontFamily: "'Syne', sans-serif",
         }}
       >
         Ne vous cachez plus derrière WhatsApp. Créez votre catalogue
@@ -74,7 +102,7 @@ export default function Hero() {
           style={{
             background: "#111",
             color: "#fff",
-            fontFamily: "'Syne', sans-serif",
+            // fontFamily: "'Syne', sans-serif",
             fontWeight: "normal",
             fontSize: 14,
             padding: "12px 35px",
@@ -91,7 +119,7 @@ export default function Hero() {
             (e.currentTarget.style.transform = "translateY(0)")
           }
         >
-          Rejoindre la communanuté →
+          Rejoindre la communauté →
         </button>
 
         <button
@@ -99,7 +127,7 @@ export default function Hero() {
           style={{
             background: "#fff",
             color: "#111",
-            fontFamily: "'Syne', sans-serif",
+            // fontFamily: "'Syne', sans-serif",
             fontWeight: "normal",
             fontSize: 14,
             padding: "12px 35px",
@@ -110,44 +138,6 @@ export default function Hero() {
         >
           Découvrir les talents
         </button>
-
-      </div>
-
-      <div className="mt-14 flex items-center justify-center gap-3.5 flex-wrap">
-
-        <div className="flex -space-x-2.5 overflow-hidden p-0.5">
-          <img
-            className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm"
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
-            alt="Artisan"
-          />
-          <img
-            className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm"
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80"
-            alt="Artisan"
-          />
-          <img
-            className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm"
-            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=100&auto=format&fit=crop&q=80"
-            alt="Artisan"
-          />
-          <img
-            className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover shadow-sm"
-            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80"
-            alt="Artisan"
-          />
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#EF9F27] font-bold text-white text-xs ring-2 ring-white shadow-sm">
-            +500
-          </div>
-        </div>
-
-        {/* Texte */}
-        <p className="text-sm font-medium text-neutral-600">
-          <span className="font-bold text-neutral-900">
-            +500 artisans africains
-          </span>{" "}
-          nous font déjà confiance.
-        </p>
       </div>
     </section>
   );

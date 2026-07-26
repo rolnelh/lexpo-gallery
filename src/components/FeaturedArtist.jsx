@@ -56,7 +56,7 @@ export default function FeaturedArtist() {
           </div>
 
           <div>
-            <h2 className="font-syne text-3xl sm:text-4xl md:text-4xl font-normal tracking-tight text-neutral-900 leading-none">
+            <h2 className="font-Quicksand text-3xl sm:text-4xl md:text-4xl font-normal tracking-tight text-neutral-900 leading-none">
               {artistData.name}
             </h2>
             <span className="block text-xs sm:text-sm font-bold text-[#EF9F27] uppercase tracking-widest mt-2">
@@ -74,7 +74,7 @@ export default function FeaturedArtist() {
 
           <button
             onClick={() => navigate(`/president-djangoun`)}
-            className="group mt-2 inline-flex items-center justify-center gap-3 bg-neutral-900 hover:bg-[#EF9F27] text-white font-syne text-sm font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 w-full sm:w-auto"
+            className="group mt-2 inline-flex items-center justify-center gap-3 bg-neutral-900 hover:bg-[#EF9F27] text-white font-Quicksand text-sm font-bold px-8 py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 w-full sm:w-auto"
           >
             {artistData.callToAction}
             <ArrowRight

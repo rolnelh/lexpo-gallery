@@ -38,9 +38,9 @@ export default function Why() {
     <section style={{ padding: "80px 5%", background: "#fff" }}>
       <h2
         style={{
-          fontFamily: "'Syne', sans-serif",
+          fontFamily: "'Quicksand', sans-serif",
           fontSize: 24,
-          fontWeight: 400,
+          fontWeight: 600,
           margin: "0 auto 40px",
           textAlign: "center",
         }}

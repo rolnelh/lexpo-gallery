@@ -68,7 +68,7 @@ export default function How() {
         </p>
         <h2
           style={{
-            fontFamily: "'Syne', sans-serif",
+            fontFamily: "'Quicksand', sans-serif",
             fontSize: "36px",
             fontWeight: 400,
           }}
@@ -148,7 +148,7 @@ export default function How() {
                 <div style={{ paddingTop: "6px" }}>
                   <h3
                     style={{
-                      fontFamily: "'Syne', sans-serif",
+                      fontFamily: "'Quicksand', sans-serif",
                       fontSize: "17px",
                       fontWeight: 700,
                       marginBottom: 6,

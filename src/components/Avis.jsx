@@ -103,7 +103,6 @@ export default function Avis() {
         })}
       </div>
 
-      {/* BLOC TÉMOIGNAGES & GALERIE */}
       <div
         style={{
           display: "flex",
@@ -112,11 +111,11 @@ export default function Avis() {
           alignItems: "flex-start",
         }}
       >
-        {/* CÔTÉ GAUCHE : AVIS CLIENTS */}
+
         <div style={{ flex: "1 1 450px" }}>
           <h2
             style={{
-              fontFamily: "'Syne', sans-serif",
+              fontFamily: "'Quicksand', sans-serif",
               fontSize: "36px",
               fontWeight: "600",
               marginBottom: "15px",
@@ -126,7 +125,6 @@ export default function Avis() {
             Le succès de nos créateurs
           </h2>
 
-          {/* NOTE GLOBALE */}
           <div
             style={{
               display: "flex",
@@ -144,7 +142,6 @@ export default function Avis() {
             <span style={{ color: "#888", fontSize: "14px" }}>(+1 200 témoignages)</span>
           </div>
 
-          {/* LISTE DES CARTE D'AVIS */}
           {avisClients.map((a, i) => (
             <div
               key={i}
@@ -232,7 +229,6 @@ export default function Avis() {
           ))}
         </div>
 
-        {/* CÔTÉ DROIT : MOSAÏQUE D'IMAGES */}
         <div
           style={{
             flex: "1 1 350px",
