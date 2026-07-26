@@ -65,7 +65,7 @@ export default function ProductPage() {
         })}</script>
       </Helmet>
 
-      <div style={{ fontFamily: "'DM Sans', sans-serif", color: '#111', minHeight: '100vh', background: '#FAFAFA' }}>
+      <div style={{ fontFamily: "'Quicksand', sans-serif", color: '#111', minHeight: '100vh', background: '#FAFAFA' }}>
 
         <nav style={{
           display: 'flex', alignItems: 'center', gap: 12,

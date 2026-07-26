@@ -49,7 +49,7 @@ const DjangounProfile = () => {
     <div
       className="bg-[#FDFCFB] min-h-screen"
       style={{
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'Quicksand', sans-serif",
         color: "#111",
         minHeight: "100vh",
       }}

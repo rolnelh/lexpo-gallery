@@ -29,7 +29,7 @@ export default function ReventeLanding() {
 
       <div
         style={{
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'Quicksand', sans-serif",
           color: "#111",
           minHeight: "100vh",
         }}

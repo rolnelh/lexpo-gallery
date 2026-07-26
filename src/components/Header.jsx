@@ -35,12 +35,7 @@ export default function Header() {
           onClick={() => navigate("/")}
           className="flex cursor-pointer items-center gap-3 transition-opacity hover:opacity-80"
         >
-          <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-[#EF9F27]/10 to-[#EF9F27]/30 text-[#EF9F27] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#EF9F27] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#EF9F27]/25">
-            <Sparkles
-              size={18}
-              className="transition-transform duration-300 group-hover:rotate-12"
-            />
-          </div>
+          
 
           <span className="font-Quicksand text-base font-bold tracking-tight text-black">
             L'<span className="text-[#EF9F27]">Expo</span>
@@ -48,7 +43,7 @@ export default function Header() {
         </div>
 
         {/* Navigation Desktop */}
-        <nav className="hidden lg:flex items-center gap-8 tracking-tight">
+        <nav className="hidden lg:flex items-center gap-8 tracking-tight text-black">
           <NavLink to="/explorer">Découvrir les créations</NavLink>
           <NavLink to="/artisans">Nos Artisans</NavLink>
         </nav>
@@ -100,10 +95,10 @@ export default function Header() {
 
           <button
             onClick={() => navigate("/publier")}
-            className="group flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2 text-[14px] font-normal uppercase text-white transition-all cursor-pointer"
+            className="group flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2 text-[14px] font-normal text-white transition-all cursor-pointer"
           >
-            <span className="hidden xs:inline">Exposer mon travail</span>
-            <span className="xs:hidden">Exposer</span>
+            {/* <span className="hidden xs:inline">Exposer mon travail</span> */}
+            <span className="xs:hidden">Créer ma catalogue</span>
             <ArrowRight
               size={14}
               className="group-hover:translate-x-1 transition-transform"
@@ -122,8 +117,8 @@ export default function Header() {
       {/* Menu Mobile */}
       <div
         className={`absolute left-0 top-[72px] w-full border-b border-stone-100 bg-white p-6 shadow-xl transition-all duration-300 lg:hidden ${isMenuOpen
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-10 opacity-0 pointer-events-none"
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-10 opacity-0 pointer-events-none"
           }`}
       >
         <div className="flex flex-col gap-6">
@@ -191,14 +186,15 @@ function NavLink({ to, children, onClick }) {
     <Link
       to={to}
       onClick={onClick}
-      style={{
-        textDecoration: "none",
-        color: "#666",
-        fontSize: "15px",
-        fontWeight: "500",
-        transition: "color 0.2s",
-        fontFamily: "'Quicksand', sans-serif",
-      }}
+      // style={{
+      //   textDecoration: "none",
+      //   color: "#666",
+      //   fontSize: "15px",
+      //   fontWeight: "500",
+      //   transition: "color 0.2s",
+      //   fontFamily: "'Quicksand', sans-serif",
+      // }}
+      className="text-[15px] font-normal tracking-tight text-black hover:text-stone-950"
     >
       {children}
     </Link>

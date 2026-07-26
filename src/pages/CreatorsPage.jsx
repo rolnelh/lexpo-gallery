@@ -178,7 +178,7 @@ const CreatorsPage = () => {
       <div
         className="min-h-screen p-4 md:p-10 space-y-10 mt-10"
         style={{
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'Quicksand', sans-serif",
           color: "#111",
           minHeight: "100vh",
         }}
@@ -376,14 +376,14 @@ const CreatorsPage = () => {
               Votre savoir-faire mérite une vitrine mondiale.
             </h2>
 
-            <p className="text-stone-400 text-sm md:text-base leading-relaxed">
+            <p className="font-syne text-stone-400 text-sm md:text-base leading-relaxed">
               Vous êtes un créateur, un sculpteur ou un artisan béninois ?
               Rejoignez la communauté L'Expo et commencez à vendre vos œuvres en
               quelques clics.
             </p>
 
             <div className="pt-8">
-              <button className="bg-[#EF9F27] text-white px-6 py-3 rounded-full font-black text-xs hover:bg-white hover:text-black transition-all duration-300 shadow-xl shadow-[#EF9F27]/10 flex items-center gap-3 mx-auto active:scale-95 tracking-wider">
+              <button className="bg-[#EF9F27] font-syne text-white px-6 py-3 rounded-full text-xs hover:bg-white hover:text-black transition-all duration-300 shadow-xl shadow-[#EF9F27]/10 flex items-center gap-3 mx-auto active:scale-95">
                 Ouvrir mon atelier
                 <ArrowRight size={18} />
               </button>

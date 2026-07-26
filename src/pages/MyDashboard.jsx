@@ -40,7 +40,7 @@ const MyDashboard = () => {
   return (
     <div
       className="flex min-h-screen bg-[#fafafa]"
-      style={{ fontFamily: "'DM Sans', sans-serif" }}
+      style={{ fontFamily: "'Quicksand', sans-serif" }}
     >
       <Helmet>
         <title>Tableau de bord — L'Expo</title>

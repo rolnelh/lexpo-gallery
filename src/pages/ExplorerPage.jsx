@@ -61,7 +61,7 @@ export default function ExplorerPage() {
 
       <div
         style={{
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'Quicksand', sans-serif",
           color: "#111",
           minHeight: "100vh",
         }}

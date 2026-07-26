@@ -82,7 +82,7 @@ const LoginForm = () => {
 
       <div
         className="flex w-full max-w-6xl flex-col items-stretch gap-12 rounded-[30px] md:rounded-[60px] bg-gray-50 p-6 sm:p-10 md:flex-row lg:p-20 shadow-sm"
-        style={{ fontFamily: "'DM Sans', sans-serif" }}
+        style={{ fontFamily: "'Quicksand', sans-serif" }}
       >
         <div className="flex w-full flex-col justify-center space-y-6 md:w-1/2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-6">
