@@ -194,7 +194,7 @@ function NavLink({ to, children, onClick }) {
       //   transition: "color 0.2s",
       //   fontFamily: "'Quicksand', sans-serif",
       // }}
-      className="text-[15px] font-normal tracking-tight text-black hover:text-stone-950"
+      className="text-[15px] font-Quicksand font-normal tracking-tight text-black hover:text-stone-950"
     >
       {children}
     </Link>

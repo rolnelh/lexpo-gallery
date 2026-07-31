@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useNavigate, Link } from "react-router-dom";
-import { Sparkles} from "lucide-react";
-
-
 import {
+  Sparkles,
   LayoutDashboard,
   ShoppingBag,
   UserCircle,
-  Settings,
+  Settings as SettingsIcon,
   LogOut,
   PlusCircle,
-  MapPin,
+  CreditCard
 } from "lucide-react";
 
 import ProfilView from "../components/DashboardComponents/ProfilView";
 import BoutiqueView from "../components/DashboardComponents/BoutiqueView";
-
+import Subscriptions from "../components/DashboardComponents/Subscriptions";
+import Settings from "../components/DashboardComponents/Settings";
 
 const MyDashboard = () => {
   const navigate = useNavigate();
@@ -26,12 +25,21 @@ const MyDashboard = () => {
     switch (activeTab) {
       case "aperçu":
         return <DefaultApercu />;
+
       case "produits":
-        return (
-          <BoutiqueView />
-        );
+        return <BoutiqueView />;
+
       case "profil":
         return <ProfilView />;
+
+      case "Subscriptions":
+      case "abonnement":
+        return <Subscriptions />;
+
+      case "Settings":
+      case "settings":
+        return <Settings />;
+
       default:
         return <DefaultApercu />;
     }
@@ -47,9 +55,10 @@ const MyDashboard = () => {
       </Helmet>
 
       <aside className="fixed h-full w-64 border-r border-gray-100 bg-white p-6 hidden md:block">
+        {/* Logo / Brand */}
         <div
           onClick={() => navigate("/")}
-          className="flex cursor-pointer items-center gap-3 transition-opacity hover:opacity-80"
+          className="group flex cursor-pointer items-center gap-3 transition-opacity hover:opacity-80 mb-8"
         >
           <div className="relative flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-[#EF9F27]/10 to-[#EF9F27]/30 text-[#EF9F27] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#EF9F27] group-hover:text-white group-hover:shadow-lg group-hover:shadow-[#EF9F27]/25">
             <Sparkles
@@ -63,31 +72,50 @@ const MyDashboard = () => {
           </span>
         </div>
 
-        <nav className="space-y-1">
+        {/* Navigation */}
+        <nav className="space-y-3">
           <SidebarItem
             icon={<LayoutDashboard size={18} />}
             label="Aperçu"
             active={activeTab === "aperçu"}
             onClick={() => setActiveTab("aperçu")}
           />
+
           <SidebarItem
             icon={<ShoppingBag size={18} />}
             label="Ma boutique"
             active={activeTab === "produits"}
             onClick={() => setActiveTab("produits")}
           />
+
           <SidebarItem
             icon={<UserCircle size={18} />}
             label="Mon Profil"
             active={activeTab === "profil"}
             onClick={() => setActiveTab("profil")}
           />
-          <div className="pt-4 mt-4 border-t border-gray-50">
-            <SidebarItem icon={<Settings size={18} />} label="Paramètres" />
+
+          {/* Nouvel onglet pour le paiement / abonnement */}
+          <SidebarItem
+            icon={<CreditCard size={18} />}
+            label="Mon Abonnement"
+            active={activeTab === "Subscriptions"}
+            onClick={() => setActiveTab("Subscriptions")}
+          />
+
+          {/* Section Paramètres & Déconnexion */}
+          <div className="pt-4 mt-4 border-t border-gray-100 space-y-1">
+            <SidebarItem
+              icon={<SettingsIcon size={18} />}
+              label="Paramètres"
+              active={activeTab === "Settings"}
+              onClick={() => setActiveTab("Settings")}
+            />
+
             <SidebarItem
               icon={<LogOut size={18} />}
               label="Déconnexion"
-              color="text-red-400"
+              color="text-red-500"
             />
           </div>
         </nav>
