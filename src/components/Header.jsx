@@ -94,7 +94,7 @@ export default function Header() {
           )}
 
           <button
-            onClick={() => navigate("/publier")}
+            onClick={() => navigate("/dashboard")}
             className="group flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2 text-[14px] font-normal text-white transition-all cursor-pointer"
           >
             {/* <span className="hidden xs:inline">Exposer mon travail</span> */}
