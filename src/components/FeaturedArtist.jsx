@@ -84,9 +84,9 @@ export default function FeaturedArtist() {
           </button>
         </div>
 
-        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 h-[380px] sm:h-[480px] md:h-[520px] order-1 lg:order-2">
+        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 sm:h-[480px] md:h-[520px] order-1 lg:order-2">
 
-          <div className="group relative col-span-1 sm:col-span-1 row-span-2 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
+          <div className="group relative col-span-2 sm:col-span-1 row-span-1 sm:row-span-2 aspect-[16/10] sm:aspect-auto rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.profileImage}
               alt={artistData.name}
@@ -95,7 +95,7 @@ export default function FeaturedArtist() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
 
-          <div className="group relative col-span-1 sm:col-span-1 row-span-1 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
+          <div className="group relative col-span-1 row-span-1 aspect-square sm:aspect-auto rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.works[0].image}
               alt={artistData.works[0].title}
@@ -103,7 +103,7 @@ export default function FeaturedArtist() {
             />
           </div>
 
-          <div className="group relative col-span-1 sm:col-span-1 row-span-1 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
+          <div className="group relative col-span-1 row-span-1 aspect-square sm:aspect-auto rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.works[1].image}
               alt={artistData.works[1].title}
@@ -111,7 +111,7 @@ export default function FeaturedArtist() {
             />
           </div>
 
-          <div className="group relative col-span-1 sm:col-span-1 row-span-1 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
+          <div className="group relative col-span-1 row-span-1 aspect-square sm:aspect-auto rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.works[2].image}
               alt={artistData.works[2].title}
@@ -119,7 +119,7 @@ export default function FeaturedArtist() {
             />
           </div>
 
-          <div className="group relative col-span-2 sm:col-span-1 row-span-1 rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
+          <div className="group relative col-span-1 row-span-1 aspect-square sm:aspect-auto rounded-2xl overflow-hidden bg-neutral-100 border border-neutral-200/60 shadow-sm">
             <img
               src={artistData.works[3].image}
               alt={artistData.works[3].title}
