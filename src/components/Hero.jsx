@@ -153,13 +153,7 @@ export default function Hero() {
             letterSpacing: "-1px",
           }}
         >
-          Offrez à votre savoir-faire
-          <span
-            aria-hidden="true"
-            className="mx-2 inline-flex h-10 w-10 -translate-y-1 items-center justify-center rounded-full bg-white text-lg shadow-md ring-1 ring-black/5 align-middle"
-          >
-            ✨
-          </span>
+          Offrez à votre savoir-faire{" "}
           <span style={{ color: "#EF9F27" }}>la vitrine</span> qu'il mérite.
         </h1>
 
