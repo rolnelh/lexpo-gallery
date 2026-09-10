@@ -29,3 +29,40 @@
 .animate-marquee-slow:hover {
   animation-play-state: paused;
 }
+
+/* Orbite décorative derrière le Hero : anneaux + avatars flottants */
+@keyframes orbit-spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbit-spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+.hero-orbit-track {
+  animation: orbit-spin 60s linear infinite;
+}
+
+.hero-orbit-counter {
+  animation: orbit-spin-reverse 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-orbit-track,
+  .hero-orbit-counter {
+    animation: none;
+  }
+}
