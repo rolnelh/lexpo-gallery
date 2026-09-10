@@ -1,142 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight, Search, Star } from "lucide-react";
+import products from "../data/products.json";
 
-// Avatars flottants sur l'orbite décorative derrière le hero
-const ORBIT_AVATARS = [
-  {
-    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80",
-    angle: 25,
-    radius: "clamp(150px, 33vw, 300px)",
-    size: 58,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=120&auto=format&fit=crop&q=80",
-    angle: 100,
-    radius: "clamp(95px, 21vw, 190px)",
-    size: 42,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&auto=format&fit=crop&q=80",
-    angle: 165,
-    radius: "clamp(150px, 33vw, 300px)",
-    size: 52,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80",
-    angle: 205,
-    radius: "clamp(95px, 21vw, 190px)",
-    size: 46,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80",
-    angle: 260,
-    radius: "clamp(150px, 33vw, 300px)",
-    size: 60,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80",
-    angle: 335,
-    radius: "clamp(95px, 21vw, 190px)",
-    size: 44,
-  },
-];
+// Créations mises en avant, flottant autour du hero (desktop uniquement)
+const FLOATING_PRODUCTS = [products[1], products[7]].filter(Boolean);
 
-function HeroOrbit() {
+function FloatingProductCard({ product, style, imgHeight = 130 }) {
   return (
     <div
-      aria-hidden="true"
-      style={{
-        position: "absolute",
-        inset: 0,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: 0,
-        pointerEvents: "none",
-      }}
+      className="hidden lg:block absolute w-[190px] rounded-2xl bg-white p-2.5 border border-neutral-100 shadow-xl"
+      style={style}
     >
-      <div
-        style={{
-          position: "relative",
-          width: "clamp(360px, 72vw, 640px)",
-          height: "clamp(360px, 72vw, 640px)",
-        }}
-      >
-        {/* Halo doux */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "42%",
-            height: "42%",
-            borderRadius: "50%",
-            background: "#EF9F27",
-            opacity: 0.12,
-            filter: "blur(60px)",
-          }}
+      <div className="relative overflow-hidden rounded-xl">
+        <img
+          src={product.image}
+          alt={product.title}
+          className="w-full object-cover"
+          style={{ height: imgHeight }}
         />
-
-        {/* Anneaux */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "100%",
-            height: "100%",
-            borderRadius: "50%",
-            border: "1px solid rgba(17,17,17,0.08)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "63%",
-            height: "63%",
-            borderRadius: "50%",
-            border: "1px dashed rgba(239,159,39,0.35)",
-          }}
-        />
-
-        {/* Piste rotative portant les avatars */}
-        <div
-          className="hero-orbit-track"
-          style={{ position: "absolute", top: "50%", left: "50%" }}
-        >
-          {ORBIT_AVATARS.map((a, i) => (
-            <div
-              key={i}
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                transform: `rotate(${a.angle}deg) translate(${a.radius}) rotate(-${a.angle}deg)`,
-              }}
-            >
-              <div
-                className="hero-orbit-counter"
-                style={{
-                  width: a.size,
-                  height: a.size,
-                  marginLeft: -a.size / 2,
-                  marginTop: -a.size / 2,
-                }}
-              >
-                <img
-                  src={a.src}
-                  alt=""
-                  className="h-full w-full rounded-full object-cover ring-2 ring-white shadow-lg"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+        <span className="absolute left-2 top-2 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-neutral-800 backdrop-blur">
+          {product.category}
+        </span>
+      </div>
+      <div className="flex items-center justify-between px-1 pb-1 pt-2">
+        <span className="truncate text-[11px] font-semibold text-neutral-800">
+          {product.author.name}
+        </span>
+        <span className="flex shrink-0 items-center gap-0.5 text-[11px] font-bold text-neutral-900">
+          <Star size={11} fill="#EF9F27" stroke="none" />
+          {product.rating.toFixed(1)}
+        </span>
       </div>
     </div>
   );
@@ -144,6 +38,14 @@ function HeroOrbit() {
 
 export default function Hero() {
   const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(
+      query.trim() ? `/explorer?q=${encodeURIComponent(query.trim())}` : "/explorer",
+    );
+  };
 
   return (
     <section
@@ -151,14 +53,48 @@ export default function Hero() {
         position: "relative",
         overflow: "hidden",
         textAlign: "center",
-        padding: "70px 5% 80px",
-        background: "#fff",
-        borderBottom: "1px solid #f5f5f5",
+        padding: "80px 5% 120px",
+        background: "#FBF6EC",
         fontFamily: "'General Sans', sans-serif",
-
       }}
     >
-      <HeroOrbit />
+      {/* Halo décoratif */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full opacity-20 blur-3xl"
+        style={{ background: "#EF9F27" }}
+      />
+
+      {/* Créations flottantes (desktop) */}
+      {FLOATING_PRODUCTS[0] && (
+        <>
+          <FloatingProductCard
+            product={FLOATING_PRODUCTS[0]}
+            style={{ top: "6%", right: "5%", transform: "rotate(-6deg)" }}
+          />
+          <div
+            className="hidden lg:flex absolute items-center justify-center rounded-full bg-neutral-900 text-center text-[11px] font-bold leading-tight text-white shadow-lg"
+            style={{
+              top: "1%",
+              right: "23%",
+              width: 60,
+              height: 60,
+              transform: "rotate(-6deg)",
+            }}
+          >
+            +500
+            <br />
+            artisans
+          </div>
+        </>
+      )}
+      {FLOATING_PRODUCTS[1] && (
+        <FloatingProductCard
+          product={FLOATING_PRODUCTS[1]}
+          imgHeight={110}
+          style={{ top: "48%", right: "0%", transform: "rotate(5deg)" }}
+        />
+      )}
 
       <div style={{ position: "relative", zIndex: 1 }}>
         <div
@@ -166,10 +102,11 @@ export default function Hero() {
             display: "inline-flex",
             alignItems: "center",
             gap: "10px",
-            background: "#f4f4f5",
+            background: "#fff",
             padding: "10px 16px 10px 6px",
             borderRadius: "100px",
             marginBottom: 32,
+            boxShadow: "0 2px 10px rgba(0,0,0,0.04)",
           }}
         >
           {/* Groupe d'avatars superposés */}
@@ -209,15 +146,21 @@ export default function Hero() {
             fontFamily: "'Fredoka', sans-serif",
             fontSize: "clamp(2.2rem, 6vw, 3.8rem)",
             fontWeight: 600,
-            lineHeight: 1.05,
+            lineHeight: 1.15,
             marginBottom: 24,
-            maxWidth: 900,
+            maxWidth: 760,
             margin: "0 auto 24px",
             letterSpacing: "-1px",
           }}
         >
-          Offrez à votre <span style={{ color: "#EF9F27" }}>savoir-faire</span> la
-          vitrine qu'il mérite.
+          Offrez à votre savoir-faire
+          <span
+            aria-hidden="true"
+            className="mx-2 inline-flex h-10 w-10 -translate-y-1 items-center justify-center rounded-full bg-white text-lg shadow-md ring-1 ring-black/5 align-middle"
+          >
+            ✨
+          </span>
+          <span style={{ color: "#EF9F27" }}>la vitrine</span> qu'il mérite.
         </h1>
 
         <p
@@ -225,8 +168,8 @@ export default function Hero() {
             color: "#666",
             fontSize: "18px",
             fontWeight: "normal",
-            maxWidth: 620,
-            margin: "15px auto 38px",
+            maxWidth: 560,
+            margin: "15px auto 32px",
             lineHeight: 1.6,
           }}
         >
@@ -234,56 +177,84 @@ export default function Hero() {
           professionnel en 2 minutes et présentez vos créations au monde entier.
         </p>
 
-        <div
+        <form
+          onSubmit={handleSearch}
           style={{
             display: "flex",
-            gap: "16px",
-            justifyContent: "center",
-            flexWrap: "wrap",
+            alignItems: "center",
+            gap: 0,
+            maxWidth: 480,
+            margin: "0 auto 20px",
+            border: "1.5px solid #111",
+            borderRadius: 100,
+            overflow: "hidden",
+            background: "#fff",
           }}
         >
-          <button
-            onClick={() => navigate("/register")}
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Chercher un tableau, un bijou, du lin..."
             style={{
-              background: "#111",
-              color: "#fff",
-              // fontFamily: "'Syne', sans-serif",
-              fontWeight: "normal",
-              fontSize: 14,
-              padding: "12px 35px",
-              borderRadius: "100px",
+              flex: 1,
               border: "none",
-              cursor: "pointer",
-              boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-              transition: "transform 0.2s",
-            }}
-            onMouseEnter={(e) =>
-              (e.currentTarget.style.transform = "translateY(-3px)")
-            }
-            onMouseLeave={(e) =>
-              (e.currentTarget.style.transform = "translateY(0)")
-            }
-          >
-            Rejoindre la communauté →
-          </button>
-
-          <button
-            onClick={() => navigate("/explorer")}
-            style={{
-              background: "#fff",
-              color: "#111",
-              // fontFamily: "'Syne', sans-serif",
-              fontWeight: "normal",
+              outline: "none",
+              padding: "14px 22px",
               fontSize: 14,
-              padding: "12px 35px",
-              borderRadius: "100px",
-              border: "2px solid #111",
+              background: "transparent",
+              fontFamily: "'General Sans', sans-serif",
+              minWidth: 0,
+            }}
+          />
+          <button
+            type="submit"
+            aria-label="Rechercher"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "#EF9F27",
+              color: "#fff",
+              border: "none",
+              width: 46,
+              height: 46,
+              margin: 3,
+              borderRadius: "50%",
               cursor: "pointer",
+              flexShrink: 0,
             }}
           >
-            Découvrir les talents
+            <Search size={17} />
           </button>
-        </div>
+        </form>
+
+        <button
+          onClick={() => navigate("/register")}
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 8,
+            background: "#111",
+            color: "#fff",
+            fontWeight: "normal",
+            fontSize: 14,
+            padding: "12px 30px",
+            borderRadius: "100px",
+            border: "none",
+            cursor: "pointer",
+            boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+            transition: "transform 0.2s",
+          }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.transform = "translateY(-3px)")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.transform = "translateY(0)")
+          }
+        >
+          Rejoindre la communauté
+          <ArrowRight size={15} />
+        </button>
       </div>
     </section>
   );
