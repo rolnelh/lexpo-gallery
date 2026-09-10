@@ -1,14 +1,14 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000/api",
+  baseURL: process.env.REACT_APP_API_URL || "http://127.0.0.1:8000/api",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",
   },
 });
 
-// Intercepteur sécurisé pour Next.js (vérifie si 'window' existe)
+// Intercepteur sécurisé (vérifie si 'window' existe)
 api.interceptors.request.use((config) => {
   if (typeof window !== "undefined") {
     const token = localStorage.getItem("token");

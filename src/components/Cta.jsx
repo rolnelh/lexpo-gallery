@@ -29,7 +29,7 @@ export default function Avis() {
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
               <button
-                onClick={() => navigate("/publier")}
+                onClick={() => navigate("/dashboard")}
                 className="group inline-flex items-center justify-center gap-3 bg-[#EF9F27] hover:bg-[#d98c1f] text-neutral-950 font-syne font-bold text-sm px-8 py-4 rounded-xl transition-all duration-300 shadow-lg shadow-[#EF9F27]/20 active:scale-[0.98]"
               >
                 <Store size={18} />

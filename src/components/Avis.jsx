@@ -1,5 +1,5 @@
 import React from "react";
-import  navigate, { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Hammer, Star, Globe, ShieldCheck, Quote, CheckCircle2 } from "lucide-react";
 
