@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { Helmet } from "react-helmet-async";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import products from "../data/products.json";
 import Header from "../components/Header";
@@ -22,7 +22,8 @@ const SORTS = [
 
 export default function ExplorerPage() {
   const navigate = useNavigate();
-  const [search, setSearch] = useState("");
+  const [searchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
   const [category, setCategory] = useState("Tous");
   const [sort, setSort] = useState("recent");
 
@@ -34,15 +35,15 @@ export default function ExplorerPage() {
       const q = search.toLowerCase();
       list = list.filter(
         (p) =>
-          p.nom.toLowerCase().includes(q) ||
+          p.title.toLowerCase().includes(q) ||
           p.description.toLowerCase().includes(q) ||
-          p.lieu.toLowerCase().includes(q) ||
+          p.location.toLowerCase().includes(q) ||
           (p.tags && p.tags.some((t) => t.toLowerCase().includes(q))),
       );
     }
 
-    if (sort === "price_asc") list.sort((a, b) => a.prix - b.prix);
-    else if (sort === "price_desc") list.sort((a, b) => b.prix - a.prix);
+    if (sort === "price_asc") list.sort((a, b) => a.price - b.price);
+    else if (sort === "price_desc") list.sort((a, b) => b.price - a.price);
     else if (sort === "recent") list.sort((a, b) => (b.id || 0) - (a.id || 0));
 
     return list;
