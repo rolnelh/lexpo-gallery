@@ -1,40 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowRight, Search, Star } from "lucide-react";
-import products from "../data/products.json";
+import { ArrowRight, Search } from "lucide-react";
 
-// Créations mises en avant, flottant autour du hero (desktop uniquement)
-const FLOATING_PRODUCTS = [products[1], products[7]].filter(Boolean);
-
-function FloatingProductCard({ product, style, imgHeight = 130 }) {
-  return (
-    <div
-      className="hidden lg:block absolute w-[190px] rounded-2xl bg-white p-2.5 border border-neutral-100 shadow-xl"
-      style={style}
-    >
-      <div className="relative overflow-hidden rounded-xl">
-        <img
-          src={product.image}
-          alt={product.title}
-          className="w-full object-cover"
-          style={{ height: imgHeight }}
-        />
-        <span className="absolute left-2 top-2 rounded-full bg-white/90 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-neutral-800 backdrop-blur">
-          {product.category}
-        </span>
-      </div>
-      <div className="flex items-center justify-between px-1 pb-1 pt-2">
-        <span className="truncate text-[11px] font-semibold text-neutral-800">
-          {product.author.name}
-        </span>
-        <span className="flex shrink-0 items-center gap-0.5 text-[11px] font-bold text-neutral-900">
-          <Star size={11} fill="#EF9F27" stroke="none" />
-          {product.rating.toFixed(1)}
-        </span>
-      </div>
-    </div>
-  );
-}
+// Portraits d'artisans flottants autour du hero (desktop uniquement)
+const FLOATING_ARTISANS = [
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=200&auto=format&fit=crop&q=80",
+];
 
 export default function Hero() {
   const navigate = useNavigate();
@@ -65,36 +37,55 @@ export default function Hero() {
         style={{ background: "#EF9F27" }}
       />
 
-      {/* Créations flottantes (desktop) */}
-      {FLOATING_PRODUCTS[0] && (
-        <>
-          <FloatingProductCard
-            product={FLOATING_PRODUCTS[0]}
-            style={{ top: "6%", right: "5%", transform: "rotate(-6deg)" }}
-          />
-          <div
-            className="hidden lg:flex absolute items-center justify-center rounded-full bg-neutral-900 text-center text-[11px] font-bold leading-tight text-white shadow-lg"
-            style={{
-              top: "1%",
-              right: "23%",
-              width: 60,
-              height: 60,
-              transform: "rotate(-6deg)",
-            }}
-          >
-            +500
-            <br />
-            artisans
-          </div>
-        </>
-      )}
-      {FLOATING_PRODUCTS[1] && (
-        <FloatingProductCard
-          product={FLOATING_PRODUCTS[1]}
-          imgHeight={110}
-          style={{ top: "48%", right: "0%", transform: "rotate(5deg)" }}
+      {/* Portraits d'artisans flottants (desktop) */}
+      <div
+        className="hidden lg:block absolute overflow-hidden rounded-full ring-4 ring-white shadow-xl"
+        style={{
+          top: "8%",
+          right: "9%",
+          width: 120,
+          height: 120,
+          transform: "rotate(-4deg)",
+        }}
+      >
+        <img
+          src={FLOATING_ARTISANS[0]}
+          alt="Artisan"
+          className="h-full w-full object-cover"
         />
-      )}
+      </div>
+
+      <div
+        className="hidden lg:flex absolute items-center justify-center rounded-full bg-neutral-900 text-center text-[11px] font-bold leading-tight text-white shadow-lg"
+        style={{
+          top: "2%",
+          right: "27%",
+          width: 60,
+          height: 60,
+          transform: "rotate(-6deg)",
+        }}
+      >
+        +500
+        <br />
+        artisans
+      </div>
+
+      <div
+        className="hidden lg:block absolute overflow-hidden rounded-full ring-4 ring-white shadow-xl"
+        style={{
+          top: "52%",
+          right: "3%",
+          width: 96,
+          height: 96,
+          transform: "rotate(4deg)",
+        }}
+      >
+        <img
+          src={FLOATING_ARTISANS[1]}
+          alt="Artisan"
+          className="h-full w-full object-cover"
+        />
+      </div>
 
       <div style={{ position: "relative", zIndex: 1 }}>
         <div
