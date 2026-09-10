@@ -28,7 +28,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-[1000] h-[72px] w-full border-b border-stone-100 bg-white/80 backdrop-blur-md px-[4%]">
+    <header className="font-generalsans sticky top-0 z-[1000] h-[72px] w-full border-b border-stone-100 bg-white/80 backdrop-blur-md px-[4%]">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between">
         {/* Logo */}
         <div
@@ -37,7 +37,7 @@ export default function Header() {
         >
           
 
-          <span className="font-Quicksand text-base font-bold tracking-tight text-black">
+          <span className="text-base font-bold tracking-tight text-black">
             L'<span className="text-[#EF9F27]">Expo</span>
           </span>
         </div>
@@ -194,7 +194,7 @@ function NavLink({ to, children, onClick }) {
       //   transition: "color 0.2s",
       //   fontFamily: "'Quicksand', sans-serif",
       // }}
-      className="text-[15px] font-Quicksand font-normal tracking-tight text-black hover:text-stone-950"
+      className="text-[15px] font-normal tracking-tight text-black hover:text-stone-950"
     >
       {children}
     </Link>

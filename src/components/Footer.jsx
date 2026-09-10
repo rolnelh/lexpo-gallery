@@ -37,7 +37,7 @@ export default function Footer() {
               Nos Artisans
             </Link>
             <Link
-              to="/publier"
+              to="/dashboard"
               className="inline-flex items-center gap-1 text-xs font-bold text-[#EF9F27] hover:underline"
             >
               Exposer mon travail
