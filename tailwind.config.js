@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         syne: ["Syne", "sans-serif"],
+        fredoka: ["Fredoka", "sans-serif"],
+        generalsans: ["General Sans", "sans-serif"],
       },
     },
   },

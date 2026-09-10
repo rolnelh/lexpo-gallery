@@ -11,7 +11,7 @@ export default function Hero() {
         padding: "70px 5% 80px",
         background: "#fff",
         borderBottom: "1px solid #f5f5f5",
-        fontFamily: "'Quicksand', sans-serif",
+        fontFamily: "'General Sans', sans-serif",
 
       }}
     >
@@ -61,7 +61,7 @@ export default function Hero() {
 
       <h1
         style={{
-          fontFamily: "'Quicksand', sans-serif",
+          fontFamily: "'Fredoka', sans-serif",
           fontSize: "clamp(2.2rem, 6vw, 3.8rem)",
           fontWeight: 600,
           lineHeight: 1.05,
